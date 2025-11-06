@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌟 لینکدونی مسلم | سرگرمی، دوستی و تبلیغات رایگان 🌟</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@500;700&display=swap');
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Vazirmatn", sans-serif;
+      background: radial-gradient(circle at top left, #ff0000, #000033, #0011ff);
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* نورهای درخشان زمینه */
+    .glow {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      filter: blur(150px);
+      opacity: 0.6;
+      z-index: 0;
+      animation: float 8s ease-in-out infinite alternate;
+    }
+    .glow.red { background: #ff0033; top: 10%; left: 5%; }
+    .glow.blue { background: #0033ff; bottom: 10%; right: 5%; }
+
+    @keyframes float {
+      from { transform: translateY(0px); }
+      to { transform: translateY(40px); }
+    }
+
+    /* محتوای اصلی */
+    .content {
+      position: relative;
+      z-index: 2;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 34px;
+      color: #fff;
+      text-shadow: 0 0 10px #ff0000, 0 0 20px #0033ff;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-top: -10px;
+      color: #cce0ff;
+    }
+
+    .links {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    a {
+      display: block;
+      width: 85%;
+      max-width: 420px;
+      background: rgba(255,255,255,0.15);
+      border: 2px solid rgba(255,255,255,0.5);
+      border-radius: 16px;
+      padding: 15px;
+      font-size: 18px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    }
+
+    a:hover {
+      background: rgba(255,255,255,0.8);
+      color: #000;
+      box-shadow: 0 0 20px #fff;
+    }
+
+    .desc {
+      margin-top: 40px;
+      font-size: 17px;
+      line-height: 2;
+      color: #f0f0f0;
+      text-shadow: 0 0 5px rgba(255,255,255,0.2);
+      background: rgba(0,0,0,0.4);
+      border-radius: 20px;
+      padding: 20px;
+      width: 90%;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 14px;
+      color: #eee;
+      background: rgba(255,255,255,0.1);
+      padding: 10px;
+      border-radius: 10px;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="glow red"></div>
+  <div class="glow blue"></div>
+
+  <div class="content">
+    <h1>🌟 لینکدونی مسلم 🌟</h1>
+    <h2>جایی برای دوستی، سرگرمی و تبلیغات رایگان در روبیکا</h2>
+
+    <div class="links">
+      <a href="https://rubika.ir/ii_O_C_ii">📢 لینکدونی تبلیغاتی</a>
+      <a href="https://rubika.ir/CDHCOGGEOQLXXONPXOIXPXXOZXSXOTXO">🎮 سرگرمی و گپ دوستانه</a>
+      <a href="https://rubika.ir/IBFHGAHH0RQNWYKSCYCGHNQWIHJCSMCB">💬 گروه‌های دوستی و آشنایی</a>
+      <a href="https://rubika.ir/linkdoniiirubikaa">🌐 کانال رسمی لینکدونی مسلم</a>
+    </div>
+
+    <div class="desc">
+      👋 به دنیای <b>لینکدونی مسلم</b> خوش اومدی!  
+      اینجا یه مرکز پرانرژیه برای همه‌ی کاربرا که دنبال  
+      <b>گروه‌های فعال، دوستان جدید و تبلیغات رایگان</b> هستن 💬  
+      می‌تونی گروه خودت رو معرفی کنی، تبلیغ بدی،  
+      با بقیه گپ بزنی و وارد فضای شاد و صمیمی بشی 🌈  
+      ما همیشه سعی می‌کنیم بهترین محیط رو برای ارتباط و شادی شما بسازیم ❤️
+    </div>
+
+    <footer>طراحی و مدیریت توسط <b>مسلم</b> 💻 | 2025 © همه حقوق محفوظ است</footer>
+  </div>
+</body>
+</html>

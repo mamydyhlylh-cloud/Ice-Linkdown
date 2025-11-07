@@ -1,231 +1,263 @@
-<!-- 🧊 لینکدونی یخی - نسخه نهایی طراحی مسلم -->
+<!-- ============================
+  🧊 لینکدونی یخی — نسخه نهایی (سفید با برف آبی)
+  قرار بدید قبل از </body> یا در footer.php
+  ============================ -->
 <style>
+/* فونت فارسی */
 @import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css');
 
-body {
-  background: linear-gradient(180deg, #e6f9ff, #ffffff);
+:root{
+  --ice-blue:#00a8ff;
+  --ice-blue-deep:#0077b6;
+  --ice-dark:#023d4f;
+  --btn-radius:12px;
+}
+
+/* لایه برف آبی متحرک (ثابت، روی کل صفحه) */
+.icy-snow-layer{
+  pointer-events:none;
+  position:fixed;
+  inset:0;
+  z-index:9998;
+  background-image: url('https://i.ibb.co/nLSHg5F/snow.gif'); /* سبک، آبی */
+  background-size: cover;
+  opacity: 0.18;
+  mix-blend-mode: screen;
+}
+
+/* ظرف کلی */
+.icy-wrap {
+  max-width:960px;
+  margin:36px auto;
+  direction:rtl;
   font-family: "Vazir", Tahoma, sans-serif;
-  direction: rtl;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+  z-index:10000;
+  position:relative;
+  padding:0 16px 60px 16px;
 }
 
-.ice-container {
-  max-width: 820px;
-  margin: 50px auto;
-  position: relative;
-  text-align: center;
-  z-index: 1;
+/* کارت‌ها و باکس‌ها (پس‌زمینه سفید شفاف) */
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.99), rgba(248,253,255,0.99));
+  border: 1px solid rgba(0,168,255,0.08);
+  border-radius:16px;
+  padding:22px;
+  box-shadow: 0 14px 40px rgba(14,90,130,0.06);
+  overflow:hidden;
+  margin-bottom:20px;
+  position:relative;
+  backdrop-filter: blur(4px);
+  opacity:0;
+  transform: translateY(18px);
+  animation: slideFade 0.9s ease forwards;
 }
 
-.ice-box {
-  background: linear-gradient(135deg, rgba(240, 250, 255, 0.95), rgba(200, 235, 255, 0.9));
-  border: 2px solid rgba(160, 230, 255, 0.7);
-  border-radius: 18px;
-  padding: 30px;
-  box-shadow: 0 0 25px rgba(100, 200, 255, 0.25);
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(8px);
-  animation: fadeIn 1.2s ease both;
+/* ترتیب انیمیشن‌ها */
+.welcome-card { animation-delay: 0.2s; }
+.free-card { animation-delay: 0.5s; }
+.paid-card { animation-delay: 0.9s; }
+.signature { animation-delay: 1.2s; }
+
+/* عنوان و متن */
+.h2 {
+  color: var(--ice-blue-deep);
+  font-size:22px;
+  margin:0 0 8px 0;
+  text-shadow: 0 0 12px rgba(0,168,255,0.12);
+}
+.lead {
+  color: var(--ice-dark);
+  font-size:15px;
+  line-height:1.8;
+  margin:0;
+  font-weight:500;
 }
 
-.ice-snow {
-  position: absolute;
-  inset: 0;
-  background: url('https://i.ibb.co/nLSHg5F/snow.gif') center/cover no-repeat;
-  opacity: 0.2;
-  z-index: -1;
+/* دکمه‌های کانال (آبی یخی - تنالیته‌های مختلف آبی) */
+.channel-row {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:14px;
+  justify-content:flex-start;
+}
+.channel-btn {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 14px;
+  border-radius:var(--btn-radius);
+  color:#fff;
+  font-weight:800;
+  text-decoration:none;
+  min-width:170px;
+  box-shadow: 0 10px 30px rgba(0,120,180,0.12);
+  transition: transform .18s ease, box-shadow .18s ease;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.channel-btn:hover { transform: translateY(-6px); box-shadow:0 20px 48px rgba(0,120,180,0.16); }
+
+/* 5 تن آبی اختصاصی (همخوان با تم یخی) */
+.c1{ background: linear-gradient(180deg,#00b4ff,#0086e6); } /* آبی روشن */
+.c2{ background: linear-gradient(180deg,#00a0e6,#0072c6); } /* آبی متوسط */
+.c3{ background: linear-gradient(180deg,#1ba6ff,#0b84d6); } /* آبی پرانرژی */
+.c4{ background: linear-gradient(180deg,#66cfff,#2b9fe6); } /* آبی ملایم */
+.c5{ background: linear-gradient(180deg,#0096ff,#006bb5); } /* آبی تیره */
+
+/* متادیتای دکمه کانال */
+.ch-count { font-size:13px; opacity:0.95; }
+.ch-handle { font-size:13px; opacity:0.95; }
+
+/* CTA های اصلی */
+.actions {
+  margin-top:16px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.btn-primary{
+  background: linear-gradient(90deg,var(--ice-blue),var(--ice-blue-deep));
+  color:#fff;
+  padding:12px 22px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:800;
+  box-shadow: 0 14px 40px rgba(0,160,255,0.18);
+  transition: transform .16s ease;
+}
+.btn-primary:hover{ transform: translateY(-6px); }
+
+.btn-ghost{
+  background:transparent;
+  padding:10px 16px;
+  border-radius:12px;
+  color:var(--ice-dark);
+  border:1px solid rgba(0,120,180,0.08);
+  font-weight:800;
+  text-decoration:none;
 }
 
-.ice-title {
-  color: #0077b6;
-  font-size: 22px;
-  text-shadow: 0 0 15px rgba(180,240,255,0.8);
-  margin-bottom: 15px;
+/* قانون */
+.rule {
+  margin-top:14px;
+  background: rgba(245,250,255,0.9);
+  border-radius:10px;
+  padding:10px;
+  border:1px solid rgba(200,245,255,0.6);
+  color:var(--ice-dark);
+  text-align:right;
+  font-size:14px;
 }
 
-.ice-text {
-  font-size: 16px;
-  color: #024058;
-  line-height: 1.8;
-  font-weight: 500;
+/* بخش ثبت پولی (پایین) */
+.paid-card {
+  background: linear-gradient(90deg, rgba(255,250,255,0.99), rgba(245,255,255,0.99));
+  border-top: 2px solid rgba(0,168,255,0.12);
+  padding:18px;
+  text-align:center;
+  border-radius:12px;
 }
 
-.ice-text strong {
-  color: #0090cc;
-  text-shadow: 0 0 8px rgba(100,210,255,0.6);
+/* دکمه ثبت پولی طلایی (ظاهر برجسته) */
+.paid-btn {
+  display:inline-block;
+  margin-top:12px;
+  background: linear-gradient(90deg,#ffd24d,#ffb020);
+  color:#07303a;
+  padding:12px 22px;
+  border-radius:14px;
+  font-weight:900;
+  text-decoration:none;
+  box-shadow: 0 16px 40px rgba(246,180,40,0.16);
+  transition: transform .16s ease;
+}
+.paid-btn:hover{ transform: translateY(-6px); }
+
+/* امضا */
+.signature {
+  margin:28px 0 60px 0;
+  text-align:center;
+  color:var(--ice-blue);
+  font-weight:900;
+  font-size:15px;
+  text-shadow: 0 0 12px rgba(120,230,255,0.85);
 }
 
-.ice-rule {
-  background: rgba(240, 255, 255, 0.9);
-  border: 1px solid rgba(160, 230, 255, 0.6);
-  border-radius: 10px;
-  margin: 18px 0;
-  padding: 10px;
-  font-size: 14px;
-  color: #035064;
-  text-align: right;
+/* انیمیشن ورود */
+@keyframes slideFade {
+  from { opacity:0; transform: translateY(20px); }
+  to { opacity:1; transform: translateY(0); }
 }
 
-.ice-channels {
-  text-align: right;
-  font-size: 14px;
-  margin-top: 15px;
+/* واکنش‌گرایی موبایل */
+@media (max-width:760px){
+  .channel-btn{ min-width:calc(50% - 12px); justify-content:center; }
+  .actions{ flex-direction:column; gap:10px; }
+  .icy-wrap{ padding:0 12px 60px 12px; }
 }
-
-.ice-channels a {
-  color: #0088cc;
-  text-decoration: none;
-  font-weight: 700;
-}
-.ice-channels a:hover {
-  color: #00aaff;
-  text-shadow: 0 0 10px rgba(120,220,255,0.7);
-}
-
-.ice-cta {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 25px;
-  background: linear-gradient(90deg, #00c6ff, #0072ff);
-  color: white;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 700;
-  box-shadow: 0 0 15px rgba(0,180,255,0.5);
-  transition: 0.3s;
-}
-.ice-cta:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(0,200,255,0.8);
-}
-
-.footer-box {
-  background: rgba(220, 245, 255, 0.95);
-  border-top: 2px solid rgba(160, 230, 255, 0.8);
-  padding: 25px;
-  border-radius: 0 0 18px 18px;
-  margin-top: 35px;
-  animation: fadeIn 1.4s ease both;
-}
-
-.footer-box h3 {
-  color: #0077b6;
-  font-size: 19px;
-  text-shadow: 0 0 8px rgba(150,220,255,0.6);
-  margin-bottom: 10px;
-}
-
-.footer-box p {
-  color: #04506a;
-  font-size: 15px;
-  line-height: 1.8;
-}
-
-.footer-box a {
-  color: #0077b6;
-  font-weight: bold;
-  text-decoration: none;
-}
-.footer-box a:hover {
-  text-shadow: 0 0 8px rgba(80,210,255,0.7);
-}
-
-.footer-sign {
-  text-align: center;
-  margin: 35px 0 15px 0;
-  font-size: 15px;
-  font-weight: bold;
-  color: #00b4d8;
-  text-shadow: 0 0 12px rgba(120,230,255,0.8);
-  animation: glow 2s ease-in-out infinite alternate;
-}
-
-.welcome-box {
-  background: linear-gradient(135deg, rgba(240, 255, 255, 0.95), rgba(210, 240, 255, 0.9));
-  border: 2px solid rgba(160, 230, 255, 0.7);
-  border-radius: 18px;
-  padding: 25px;
-  text-align: center;
-  margin-bottom: 35px;
-  box-shadow: 0 0 20px rgba(100, 200, 255, 0.25);
-  animation: fadeIn 1s ease both;
-}
-
-.welcome-box h2 {
-  color: #0096c7;
-  text-shadow: 0 0 15px rgba(180,240,255,0.9);
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-
-.welcome-box p {
-  color: #023e8a;
-  font-size: 15.5px;
-  line-height: 1.8;
-}
-
-@keyframes fadeIn { from {opacity: 0; transform: translateY(10px);} to {opacity: 1; transform: translateY(0);} }
-@keyframes glow { from {text-shadow: 0 0 8px rgba(120,230,255,0.6);} to {text-shadow: 0 0 18px rgba(180,250,255,0.9);} }
 </style>
 
-<div class="ice-container">
-  <!-- خوش آمدگویی -->
-  <div class="welcome-box">
-    <div class="ice-snow"></div>
-    <h2>💠 خوش‌آمد به لینکدونی یخی ❄️</h2>
-    <p>
-      از اینکه مجموعه‌ی ما رو برای معرفی کانال یا گروهت انتخاب کردی، خوشحالیم 💙<br>
-      اینجا جاییه که <strong>لینک‌ها جون می‌گیرن و رشد می‌کنن</strong> 🚀<br>
-      با ما همراه شو تا <strong>گروه یا کانالت رو به اوج برسونی</strong> ✨
-    </p>
+<!-- لایه برف -->
+<div class="icy-snow-layer" aria-hidden="true"></div>
+
+<div class="icy-wrap" role="region" aria-label="لینکدونی یخی">
+
+  <!-- خوش‌آمد -->
+  <div class="card welcome-card" role="banner" aria-label="خوش‌آمد">
+    <h2 class="h2">💠 خوش‌آمد به لینکدونی یخی</h2>
+    <p class="lead">از اینکه ما را برای معرفی گروه یا کانالت انتخاب کردی خوشحالیم — با ما همراه شو تا گروه یا کانالت را به اوج برسانیم 🚀</p>
   </div>
 
-  <!-- بخش ثبت رایگان -->
-  <div class="ice-box">
-    <div class="ice-snow"></div>
-    <h2 class="ice-title">🏷 ثبت لینک رایگان در لینکدونی یخی ❄️</h2>
+  <!-- ثبت رایگان (۴ عضو → ثبت در ۵ کانال) -->
+  <div class="card free-card" role="region" aria-label="ثبت رایگان">
+    <h3 class="h2">🏷 ثبت کاملاً رایگان — فقط با ۴ عضو</h3>
+    <p class="lead">با معرفی <strong>۴ عضو واقعی</strong> در یکی از کانال‌های زیر و ارسال آیدی آن‌ها به ادمین، لینک شما <strong>رایگان</strong> و تضمینی در <strong>۵ کانال فعال</strong> ما ثبت خواهد شد. لطفاً اعضا واقعی باشند تا نتیجه واقعی بگیرید.</p>
 
-    <p class="ice-text">
-      با ثبت <strong>کاملاً رایگان</strong> و فقط با <strong>۴ عضو</strong> در یکی از کانال‌های ما،  
-      می‌تونی لینک یا کانالت رو در <strong>۵ کانال فعال و پربازدید</strong> لینکدونی یخی ثبت کنی 🚀  
-      فقط کافیه به قوانین احترام بذاری و اعضای واقعی معرفی کنی 💠
-    </p>
+    <!-- دکمه‌های کانال -->
+    <div class="channel-row" role="list" aria-label="کانال‌ها">
+      <a class="channel-btn c1" role="listitem" href="https://rubika.ir/ii_O_C_ii" target="_blank" rel="noopener">
+        <span class="ch-count">93K</span><span class="ch-handle">— @ii_O_C_ii</span>
+      </a>
 
-    <div class="ice-channels">
-      <p>1️⃣ 93K — <a href="https://rubika.ir/ii_O_C_ii" target="_blank">@ii_O_C_ii</a></p>
-      <p>2️⃣ 88K — <a href="https://rubika.ir/CDHCOGGEOQLXXONPXOIXPXXOZXSXOTXO" target="_blank">@CDHCOGGEOQLXXONPXOIXPXXOZXSXOTXO</a></p>
-      <p>3️⃣ 38K — <a href="https://rubika.ir/CDHCCGGE0QLFZPNPLOIIPPSDZCSOAB" target="_blank">@CDHCCGGE0QLFZPNPLOIIPPSDZCSOAB</a></p>
-      <p>4️⃣ 32K — <a href="https://rubika.ir/IBFHGAHH0RQNWYKSCYCGHNQWIHJCSMCB" target="_blank">@IBFHGAHH0RQNWYKSCYCGHNQWIHJCSMCB</a></p>
-      <p>5️⃣ 25K — <a href="https://rubika.ir/linkdoniiirubikaa" target="_blank">@linkdoniiirubikaa</a></p>
+      <a class="channel-btn c2" role="listitem" href="https://rubika.ir/CDHCOGGEOQLXXONPXOIXPXXOZXSXOTXO" target="_blank" rel="noopener">
+        <span class="ch-count">88K</span><span class="ch-handle">— @CDHCOGGEOQLXXONPXOIXPXXOZXSXOTXO</span>
+      </a>
+
+      <a class="channel-btn c3" role="listitem" href="https://rubika.ir/CDHCCGGE0QLFZPNPLOIIPPSDZCSOAB" target="_blank" rel="noopener">
+        <span class="ch-count">38K</span><span class="ch-handle">— @CDHCCGGE0QLFZPNPLOIIPPSDZCSOAB</span>
+      </a>
+
+      <a class="channel-btn c4" role="listitem" href="https://rubika.ir/IBFHGAHH0RQNWYKSCYCGHNQWIHJCSMCB" target="_blank" rel="noopener">
+        <span class="ch-count">32K</span><span class="ch-handle">— @IBFHGAHH0RQNWYKSCYCGHNQWIHJCSMCB</span>
+      </a>
+
+      <a class="channel-btn c5" role="listitem" href="https://rubika.ir/linkdoniiirubikaa" target="_blank" rel="noopener">
+        <span class="ch-count">25K</span><span class="ch-handle">— @linkdoniiirubikaa</span>
+      </a>
     </div>
 
-    <div class="ice-rule">
-      ⚠️ اعضای تکراری یا غیرواقعی پذیرفته نمی‌شن 🚫  
-      بعد از انجام مراحل، آیدی اعضا رو برای ادمین بفرست تا لینک‌ت در همه کانال‌ها ثبت بشه 💬  
-      <br>✅ برای آموزش نحوه عضو آوردن روی دکمه زیر بزن 👇
+    <div class="rule" role="note">
+      ⚠️ <strong>قانون مهم:</strong> اعضای تکراری یا غیرواقعی پذیرفته نمی‌شوند. پس از اضافه کردن اعضا، آیدی آن‌ها یا اسکرین‌شات را برای ادمین ارسال کنید تا لینک‌تان در کانال‌ها ثبت شود.
     </div>
 
-    <a href="https://rubika.ir/joinc/DJEIDBCC0FBMSHBJSVOLLLXIGZOAHXMR" class="ice-cta" target="_blank">📘 آموزش عضو آوردن</a>
+    <div class="actions" role="group" aria-label="اقدامات">
+      <a class="btn-primary" href="https://rubika.ir/joinc/DJEIDBCC0FBMSHBJSVOLLLXIGZOAHXMR" target="_blank" rel="noopener">📘 آموزش عضو آوردن</a>
+
+      <!-- دکمه سریع ارسال آیدی به ادمین (روبیکا) -->
+      <a class="btn-ghost" href="https://rubika.ir/Moslam_2024" target="_blank" rel="noopener">💬 ارسال آیدی به ادمین — @Moslam_2024</a>
+    </div>
   </div>
 
-  <!-- بخش ثبت پولی پایین سایت -->
-  <div class="footer-box">
-    <h3>💰 ثبت لینک ویژه با هزینه کم و بازده بالا</h3>
-    <p>
-      می‌خوای لینک یا کانالت سریع‌تر و بیشتر دیده بشه؟  
-      با <strong>ثبت پولی ویژه</strong>، لینک‌ت در صدر کانال‌ها قرار می‌گیره  
-      و بازدیدت چند برابر میشه 🚀  
-      فقط کافیه برای هماهنگی، پیام بدی به ادمین👇  
-    </p>
-    <p>
-      ✳️ ارتباط با پشتیبانی:  
-      <a href="https://rubika.ir/Moslam_2024" target="_blank">@Moslam_2024</a>
-    </p>
+  <!-- ثبت پولی پایین صفحه -->
+  <div class="card paid-card" role="region" aria-label="ثبت پولی">
+    <h3 class="h2">💰 ثبت ویژه (پولی) — رشد سریع و تضمینی</h3>
+    <p class="lead">اگر می‌خواهی لینک یا کانالت سریع‌تر دیده شود و در جایگاه‌های ویژه قرار بگیرد، سرویس ثبت ویژه با هزینه‌ای بسیار پایین و بازده بالا در اختیار شماست. پس از پرداخت، گزارش و هماهنگی ارسال می‌شود.</p>
+    <a class="paid-btn" href="https://rubika.ir/Moslam_2024" target="_blank" rel="noopener">🧊 هماهنگی و خرید ثبت ویژه — @Moslam_2024</a>
   </div>
 
-  <!-- امضا پایین سایت -->
-  <div class="footer-sign">✨ طراحی و مدیریت سایت: مسلم ✨</div>
+  <!-- امضای نهایی پایین سایت -->
+  <div class="signature" role="contentinfo">✨ طراحی و مدیریت سایت: مسلم</div>
+
 </div>
+<!-- ============================ -->

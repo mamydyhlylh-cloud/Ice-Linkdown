@@ -1,6 +1,12 @@
 <form action="https://submify.vercel.app/amydyhlylh@gmail.com" method="POST">
-  <input type="text" name="name" placeholder="👤 نام شما" required>
-  <input type="text" name="link" placeholder="🔗 لینک کانال یا گروه شما" required>
-  <textarea name="message" placeholder="📝 توضیحات (اختیاری)"></textarea>
-  <button type="submit">📩 ارسال برای لینکدونی یخی 🧊</button>
+  <label for="name">نام کانال یا گروه:</label>
+  <input type="text" id="name" name="channel_name" required>
+
+  <label for="link">لینک:</label>
+  <input type="url" id="link" name="channel_link" required>
+
+  <label for="desc">توضیحات:</label>
+  <textarea id="desc" name="description" rows="3"></textarea>
+
+  <button type="submit">ارسال رایگان 🧊</button>
 </form>

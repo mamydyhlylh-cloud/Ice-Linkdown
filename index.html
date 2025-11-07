@@ -4,207 +4,237 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>لینکدونی مجموعه یخی — مسلم 🧊</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <style>
-  /* ---------- Variables ---------- */
-  :root{
-    --bg1: #e8f9ff;    /* blue-white */
-    --bg2: #dff3ff;
-    --accent-ice: #00bfff;
-    --text: #023048;
-    --muted: #2a5b6b;
-    --btn-bg: linear-gradient(90deg,#e6fbff,#dff7ff);
-    --btn-glow: rgba(0,191,255,0.22);
-    --admin-green: #cff7df; /* سبز کم رنگ */
-    --admin-green-dark: #78d29a;
+  /* ---------- Fonts & reset ---------- */
+  @font-face{
+    font-family: "VazirCustom";
+    src: local("Vazir"), local("Tahoma"), local("Arial");
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;font-family:"VazirCustom",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
+  body{background:linear-gradient(180deg,#eef9ff 0%, #dff3ff 60%, #f8f5ff 100%); color:#042c3a; overflow-x:hidden; -webkit-overflow-scrolling:touch;}
+
+  /* ---------- App layout (mobile-first) ---------- */
+  .app{max-width:820px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column}
+  header{padding:18px 16px;text-align:center;position:relative;z-index:20;}
+  .brand-title{font-weight:900;font-size:20px;letter-spacing:0.4px}
+  .brand-sub{font-size:13px;color:#24606d;margin-top:6px}
+
+  /* ---------- Snow / animated background ---------- */
+  .bg-wrap{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+  .snow-layer{position:absolute;inset:0;background:
+    radial-gradient(ellipse at 10% 10%, rgba(255,255,255,0.85) 0%, transparent 18%),
+    radial-gradient(ellipse at 80% 25%, rgba(255,255,255,0.6) 0%, transparent 18%);
+    mix-blend-mode:screen; opacity:0.95; filter:blur(8px);}
+  /* drifting lights */
+  .drift {
+    position:absolute; width:220%; height:220%; left:-60%; top:-40%;
+    background: radial-gradient(circle at 15% 20%, rgba(0,200,255,0.10) 0%, transparent 12%),
+                radial-gradient(circle at 80% 60%, rgba(180,120,255,0.06) 0%, transparent 12%),
+                radial-gradient(circle at 40% 80%, rgba(0,220,170,0.06) 0%, transparent 10%);
+    animation: driftMove 20s linear infinite;
+    filter: blur(14px);
+    transform-origin:center;
+  }
+  @keyframes driftMove { 0%{transform:translateY(0) rotate(0)} 50%{transform:translateY(6%) rotate(4deg)} 100%{transform:translateY(0) rotate(0)} }
+
+  /* fine falling snow (unicode flakes) */
+  .flake {
+    position:fixed;top:-6vh;font-size:20px;opacity:0.92;z-index:5;pointer-events:none;
+    animation: fall linear infinite;
+    text-shadow:0 2px 8px rgba(0,60,80,0.08);
+  }
+  @keyframes fall {
+    0%{transform:translateY(-8vh) scale(0.9) rotate(0);opacity:1}
+    100%{transform:translateY(115vh) scale(1.05) rotate(360deg);opacity:0}
   }
 
-  /* ---------- Reset & layout ---------- */
-  *{box-sizing:border-box}
-  html,body{height:100%;margin:0;font-family:"Vazir","Segoe UI",Roboto,Helvetica,Arial; -webkit-font-smoothing:antialiased; background: linear-gradient(180deg,var(--bg1),var(--bg2)); color:var(--text); }
-  .app{max-width:780px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column}
-  header{padding:18px 16px;text-align:center;position:relative}
-  .brand-title{font-weight:800;font-size:20px;letter-spacing:0.6px}
-  .brand-sub{font-size:13px;color:var(--muted);margin-top:6px}
+  /* ---------- Nav (tab-like) ---------- */
+  nav{display:flex;gap:8px;overflow:auto;padding:10px 12px;justify-content:center;z-index:30;position:relative}
+  .nav-btn{flex:0 0 auto;padding:8px 12px;border-radius:999px;border:none;background:transparent;color:#1f6b72;font-weight:800;cursor:pointer}
+  .nav-btn.active{background:rgba(255,255,255,0.95);box-shadow:0 8px 30px rgba(2,20,40,0.06);color:#023048}
 
-  /* ---------- Nav ---------- */
-  nav{display:flex;gap:8px;overflow:auto;padding:12px 14px;justify-content:center}
-  nav button{flex:0 0 auto;padding:8px 12px;border-radius:999px;border:none;background:transparent;color:var(--muted);font-weight:700;cursor:pointer}
-  nav button.active{background:rgba(255,255,255,0.9);box-shadow:0 6px 20px rgba(0,0,0,0.06);color:var(--text)}
+  /* ---------- Hero (welcome screen) ---------- */
+  .hero{min-height:52vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;text-align:center;position:relative;z-index:10}
+  .hero h1{font-size:22px;margin:0;color:#023048;line-height:1.05;text-shadow:0 6px 18px rgba(255,255,255,0.7)}
+  .hero p{font-size:15px;color:#285d63;margin:12px 18px 18px;max-width:720px}
+  .enter-btn{display:inline-flex;align-items:center;gap:12px;padding:14px 22px;border-radius:999px;background:linear-gradient(90deg,#00c6ff,#00a8ff);color:#fff;font-weight:900;box-shadow:0 14px 40px rgba(0,160,255,0.14);border:none;cursor:pointer;font-size:15px;transform:translateY(0);transition:transform .18s ease}
+  .enter-btn:active{transform:translateY(2px)}
 
-  /* ---------- Hero / Welcome ---------- */
-  .hero{min-height:52vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;text-align:center;position:relative;overflow:hidden}
-  .hero h1{font-size:20px;margin:0 0 8px;color:var(--text);text-shadow:0 2px 18px rgba(255,255,255,0.8)}
-  .hero p{font-size:15px;color:var(--muted);line-height:1.6;margin:0 8px 18px;max-width:720px}
-  .hero .enter{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;background:linear-gradient(90deg,#00c6ff,#00a8ff);color:#fff;font-weight:900;box-shadow:0 10px 30px rgba(0,166,255,0.18);border:none;cursor:pointer;font-size:15px}
+  /* glowing headline ice sweep */
+  .ice-sweep{
+    display:inline-block;padding:2px 8px;border-radius:8px;background:linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.18));box-shadow:inset 0 1px 0 rgba(255,255,255,0.6);
+    animation: sweep 2.2s linear infinite;
+  }
+  @keyframes sweep { 0%{filter:brightness(1)} 50%{filter:brightness(1.05)} 100%{filter:brightness(1)} }
 
-  /* ---------- Sections ---------- */
-  main{padding:12px}
+  /* ---------- Content / cards ---------- */
+  main{padding:12px;z-index:10}
   .page{display:none}
   .page.active{display:block}
-  .card{background:rgba(255,255,255,0.95);border-radius:14px;padding:14px;margin-bottom:12px;box-shadow:0 8px 24px rgba(2,10,24,0.06)}
-  h3{margin:0 0 8px;font-size:16px;color:var(--text)}
-  p.lead{color:var(--muted);font-size:14px;line-height:1.6}
+  .card{background:linear-gradient(180deg,rgba(255,255,255,0.98),rgba(255,255,255,0.94));border-radius:14px;padding:14px;margin-bottom:12px;box-shadow:0 12px 36px rgba(2,10,24,0.06)}
+  h3{margin:0 0 8px;font-size:16px;color:#023048}
+  p.lead{color:#2d6b6f;font-size:14px;line-height:1.6}
 
-  /* ---------- Channel buttons (one under another) ---------- */
-  .channels{display:flex;flex-direction:column;gap:12px;margin-top:8px}
-  .channel-btn{
-    display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px;text-decoration:none;color:var(--text);background:var(--btn-bg);
-    border:1px solid rgba(0,0,0,0.04);font-weight:800;box-shadow:0 8px 18px rgba(0,0,0,0.05);
-    transition:transform .16s ease, box-shadow .16s ease;
+  /* ---------- Combined Channels + Free (stacked colorful buttons) ---------- */
+  .channels-wrap{background:linear-gradient(180deg,#eafcff,#dff8ff);padding:14px;border-radius:12px}
+  .channels-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:12px}
+  .channels-head .title{font-weight:900;color:#01323a}
+  .channels-list{display:flex;flex-direction:column;gap:12px}
+  .ch-btn{
+    display:flex;align-items:center;gap:12px;padding:14px;border-radius:12px;color:white;font-weight:900;text-decoration:none;box-shadow:0 10px 30px rgba(2,20,40,0.06);
+    transition:transform .16s ease,box-shadow .16s ease; border:0;
   }
-  .channel-btn:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,0.08)}
-  .channel-dot{width:46px;height:46px;border-radius:10px;background:linear-gradient(180deg,#f6ffff,#eaffff);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--accent-ice)}
-  .channel-info{flex:1;text-align:right}
-  .channel-info .name{font-size:15px}
-  .channel-info .meta{font-size:12px;color:var(--muted);margin-top:4px}
+  .ch-btn:active{transform:translateY(2px)}
+  .ch-dot{width:46px;height:46px;border-radius:10px;background:rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;font-weight:900;color:rgba(0,0,0,0.12)}
+  .ch-info{text-align:right;flex:1}
+  .ch-info .name{font-size:15px}
+  .ch-info .meta{font-size:12px;color:rgba(255,255,255,0.92);opacity:0.95;margin-top:4px}
 
-  /* ---------- Admin button (green light) ---------- */
+  /* color palette for buttons (soft pastel) */
+  .c1{background:linear-gradient(90deg,#5fb6ff,#3aa7ff)}   /* blue */
+  .c2{background:linear-gradient(90deg,#76e6b3,#48d79a)}   /* green */
+  .c3{background:linear-gradient(90deg,#b89bff,#9b7bff)}   /* purple */
+  .c4{background:linear-gradient(90deg,#ffb07b,#ff9a5f)}   /* orange */
+  .c5{background:linear-gradient(90deg,#ff93c9,#ff6fb2)}   /* pink */
+
+  /* free CTA button (blue-white) */
+  .free-cta{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:999px;background:linear-gradient(90deg,#00c6ff,#0099ff);color:#fff;font-weight:900;text-decoration:none;box-shadow:0 14px 36px rgba(0,153,255,0.12)}
+
+  /* ---------- Admin (green light button) ---------- */
   .admin-btn{
-    display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:14px;background:var(--admin-green);color:var(--admin-green-dark);font-weight:900;border:1px solid rgba(0,0,0,0.04);box-shadow:0 8px 30px rgba(0,0,0,0.06);cursor:pointer;text-decoration:none;
-    transition:transform .12s ease,box-shadow .12s ease;
+    display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;background:#dff7ea;color:#066a36;font-weight:900;border:1px solid rgba(6,106,54,0.08);box-shadow:0 10px 30px rgba(6,106,54,0.06);text-decoration:none;cursor:pointer;
   }
-  .admin-btn:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.08)}
+  .admin-btn:active{transform:translateY(2px)}
+  .admin-small{display:inline-block;padding:8px 12px;border-radius:999px;background:#eafcf0;color:#066a36;font-weight:800;border:1px solid rgba(6,106,54,0.06)}
 
-  /* ---------- Free registration blue-white background ---------- */
-  .free-section{background:linear-gradient(180deg,#eafcff,#d9f6ff);border-radius:12px;padding:14px;margin:12px 0}
-  .free-cta{display:inline-flex;align-items:center;gap:12px;padding:12px 16px;border-radius:999px;background:linear-gradient(90deg,#00c6ff,#0099ff);color:#fff;font-weight:900;text-decoration:none;box-shadow:0 12px 30px rgba(0,153,255,0.12)}
-
-  /* ---------- Signature animated ---------- */
-  .signature{max-width:320px;margin:18px auto 30px;text-align:center;padding:10px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,255,255,0.85));box-shadow:0 12px 30px rgba(2,10,24,0.06);opacity:0;transform:translateY(8px);transition:all .7s ease}
+  /* ---------- Signature ---------- */
+  .signature{max-width:360px;margin:18px auto 28px;text-align:center;padding:12px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.95),rgba(255,255,255,0.92));box-shadow:0 16px 40px rgba(2,10,24,0.06);opacity:0;transform:translateY(8px);transition:all .7s ease}
   .signature.show{opacity:1;transform:translateY(0)}
-  .sig-name{font-weight:900;color:var(--text);font-size:16px}
-  .sig-sub{color:var(--muted);font-size:13px;margin-top:6px}
+  .sig-line1{font-size:13px;color:#2f6b6b}
+  .sig-name{font-size:16px;font-weight:900;color:#023048;margin-top:6px}
 
-  /* ---------- Snow (light) ---------- */
-  .snow {pointer-events:none;position:fixed;left:0;right:0;top:0;height:140px; background: radial-gradient(ellipse at top center, rgba(255,255,255,0.7), transparent 40%); mix-blend-mode:screen;z-index:0}
+  /* ---------- footer ---------- */
+  footer{padding:18px;text-align:center;color:#285d63;font-size:13px}
 
-  /* ---------- Responsive tweaks ---------- */
-  @media (max-width:520px){
-    .hero h1{font-size:19px}
+  /* ---------- responsive tweaks ---------- */
+  @media(max-width:520px){
+    .hero h1{font-size:20px}
     .hero p{font-size:14px}
-    .channel-dot{width:44px;height:44px}
+    .ch-dot{width:44px;height:44px}
+    .admin-btn{padding:12px 14px}
   }
 </style>
 </head>
 <body>
-  <div class="app" id="app">
-    <div class="snow" aria-hidden="true"></div>
+  <div class="bg-wrap" aria-hidden="true">
+    <div class="snow-layer"></div>
+    <div class="drift"></div>
+    <!-- decorative flakes repeated for natural effect -->
+    <div class="flake" style="left:6%; animation-duration:9s; font-size:20px">❄️</div>
+    <div class="flake" style="left:22%; animation-duration:11s; font-size:18px">❄️</div>
+    <div class="flake" style="left:38%; animation-duration:8.5s; font-size:22px">❄️</div>
+    <div class="flake" style="left:54%; animation-duration:10.5s; font-size:16px">❄️</div>
+    <div class="flake" style="left:70%; animation-duration:12s; font-size:20px">❄️</div>
+    <div class="flake" style="left:86%; animation-duration:9.8s; font-size:18px">❄️</div>
+  </div>
 
-    <!-- Header -->
+  <div class="app" id="app">
     <header>
       <div class="brand-title">❄️ لینکدونی مجموعه یخی ❄️</div>
-      <div class="brand-sub">رشد سریع، دیده‌شدن واقعی — مخصوص روبیکا</div>
+      <div class="brand-sub">رشد سریع — ثبت در ۵ کانال پُربازدید روبیکا</div>
     </header>
 
-    <!-- Nav -->
     <nav aria-label="منوی سایت">
       <button class="nav-btn active" data-page="home">خانه</button>
-      <button class="nav-btn" data-page="channels">کانال‌ها</button>
-      <button class="nav-btn" data-page="free">ثبت رایگان</button>
+      <button class="nav-btn" data-page="channels">ثبت رایگان</button>
       <button class="nav-btn" data-page="paid">ثبت پولی</button>
       <button class="nav-btn" data-page="rules">قوانین</button>
       <button class="nav-btn" data-page="contact">ارتباط</button>
     </nav>
 
     <!-- HERO -->
-    <section class="hero page active" id="home" style="z-index:1">
-      <h1>💎 به بزرگ‌ترین دنیای یخی روبیکا خوش اومدی</h1>
-      <p>جایی که تبلیغاتت می‌درخشه، لینک‌هات دیده می‌شن و مخاطب‌ها از دل برف سمتت میان.  
-      فقط کافیه وارد شی؛ بقیه‌ش با <strong>مجموعه یخی</strong> است!</p>
-      <button class="enter" data-goto="channels" aria-label="ورود به مجموعه یخی">ورود به مجموعه یخی</button>
+    <section class="hero page active" id="home" aria-labelledby="hero-title">
+      <h1 id="hero-title"><span class="ice-sweep">💎 به بزرگ‌ترین دنیای یخی روبیکا خوش اومدی</span></h1>
+      <p>جایی که تبلیغاتت می‌درخشه، لینک‌هات دیده می‌شن و مخاطب‌ها از دل برف سمتت میان. فقط کافیه وارد شی؛ بقیه‌ش با <strong>مجموعه یخی</strong> است!</p>
+      <button class="enter-btn" data-goto="channels" aria-label="ورود به مجموعه یخی">ورود به مجموعه یخی</button>
     </section>
 
     <main>
-      <!-- Channels (one under another) -->
+      <!-- Combined Channels + Free registration -->
       <section class="page" id="channels">
-        <div class="card">
-          <h3>کانال‌های ما</h3>
-          <p class="lead">۵ کانال پربازدید مجموعه یخی — برای دیدن بیشتر و عضوگیری، روی هر کانال بزن.</p>
+        <div class="card channels-wrap">
+          <div class="channels-head">
+            <div class="title">🎯 ثبت رایگان در ۵ کانال بزرگ</div>
+            <div class="muted" style="color:#2d6b6f;font-weight:700">بدون هزینه — ثبت سریع</div>
+          </div>
 
-          <div class="channels" role="list">
-            <!-- 1 -->
-            <a class="channel-btn" href="https://rubika.ir/ii_O_C_ii" target="_blank" rel="noopener" role="listitem" aria-label="کانال 93k ii_O_C_ii">
-              <div class="channel-dot">1</div>
-              <div class="channel-info">
+          <p class="lead" style="text-align:right">لینک یا کانال خودت رو رایگان ثبت کن — لینک شما بعد از بررسی در ۵ کانال پربازدید ما منتشر می‌شود تا بازدید و عضو واقعی بگیری. (ثبت سریع و رایگان)</p>
+
+          <div class="channels-list" role="list">
+            <!-- Channel 1 -->
+            <a class="ch-btn c1" href="https://rubika.ir/ii_O_C_ii" target="_blank" rel="noopener" role="listitem" aria-label="کانال 93k">
+              <div class="ch-dot">1</div>
+              <div class="ch-info">
                 <div class="name">کانال 93K</div>
                 <div class="meta">@ii_O_C_ii</div>
               </div>
             </a>
 
-            <!-- 2 -->
-            <a class="channel-btn" href="https://rubika.ir/CDHCOGGEOQLXXONPXOIXPXXOZXSXOTXO" target="_blank" rel="noopener" aria-label="کانال 88k">
-              <div class="channel-dot">2</div>
-              <div class="channel-info">
+            <!-- Channel 2 -->
+            <a class="ch-btn c2" href="https://rubika.ir/CDHCOGGEOQLXXONPXOIXPXXOZXSXOTXO" target="_blank" rel="noopener" aria-label="کانال 88k">
+              <div class="ch-dot">2</div>
+              <div class="ch-info">
                 <div class="name">کانال 88K</div>
                 <div class="meta">@CDHCOGGEOQLXXONPXOIXPXXOZXSXOTXO</div>
               </div>
             </a>
 
-            <!-- 3 -->
-            <a class="channel-btn" href="https://rubika.ir/CDHCCGGE0QLFZPNPLOIIPPSDZCSOAB" target="_blank" rel="noopener" aria-label="کانال 38k">
-              <div class="channel-dot">3</div>
-              <div class="channel-info">
+            <!-- Channel 3 -->
+            <a class="ch-btn c3" href="https://rubika.ir/CDHCCGGE0QLFZPNPLOIIPPSDZCSOAB" target="_blank" rel="noopener" aria-label="کانال 38k">
+              <div class="ch-dot">3</div>
+              <div class="ch-info">
                 <div class="name">کانال 38K</div>
                 <div class="meta">@CDHCCGGE0QLFZPNPLOIIPPSDZCSOAB</div>
               </div>
             </a>
 
-            <!-- 4 -->
-            <a class="channel-btn" href="https://rubika.ir/IBFHGAHH0RQNWYKSCYCGHNQWIHJCSMCB" target="_blank" rel="noopener" aria-label="کانال 32k">
-              <div class="channel-dot">4</div>
-              <div class="channel-info">
+            <!-- Channel 4 -->
+            <a class="ch-btn c4" href="https://rubika.ir/IBFHGAHH0RQNWYKSCYCGHNQWIHJCSMCB" target="_blank" rel="noopener" aria-label="کانال 32k">
+              <div class="ch-dot">4</div>
+              <div class="ch-info">
                 <div class="name">کانال 32K</div>
                 <div class="meta">@IBFHGAHH0RQNWYKSCYCGHNQWIHJCSMCB</div>
               </div>
             </a>
 
-            <!-- 5 -->
-            <a class="channel-btn" href="https://rubika.ir/linkdoniiirubikaa" target="_blank" rel="noopener" aria-label="کانال 25k">
-              <div class="channel-dot">5</div>
-              <div class="channel-info">
+            <!-- Channel 5 -->
+            <a class="ch-btn c5" href="https://rubika.ir/linkdoniiirubikaa" target="_blank" rel="noopener" aria-label="کانال 25k">
+              <div class="ch-dot">5</div>
+              <div class="ch-info">
                 <div class="name">کانال 25K</div>
                 <div class="meta">@linkdoniiirubikaa</div>
               </div>
             </a>
           </div>
 
-          <!-- Admin buttons -->
-          <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
-            <!-- primary admin button (green light) -->
-            <button class="admin-btn open-admin" data-web="https://rubika.ir/Moslam_2024" aria-label="پیام به ادمین">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="transform:translateY(1px)"><path d="M2 12h20M2 6h20M2 18h20" stroke="#004d2a" stroke-width="1.6" stroke-linecap="round"/></svg>
-              پیام به ادمین — @Moslam_2024
-            </button>
-
-            <!-- web fallback visible -->
-            <a class="admin-btn" href="https://rubika.ir/Moslam_2024" target="_blank" rel="noopener" style="background:transparent;color:var(--accent-ice);border:1px solid rgba(0,153,255,0.12);">نمایش پروفایل (وب)</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Free registration -->
-      <section class="page" id="free">
-        <div class="card free-section">
-          <h3>ثبت رایگان در ۵ کانال بزرگ — رایگان و سریع ✅</h3>
-          <p class="lead">همین الان لینک یا کانالت رو رایگان ثبت کن؛ بعد از بررسی، لینک در ۵ کانال ما منتشر میشه و بازدید می‌گیری.</p>
-
-          <!-- CTA big -->
-          <div style="margin-top:12px">
-            <a class="free-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSfU8A72A0baAkptPqDSGTnic0bu4UFXMDtriY1irqnwxIIIag/viewform?usp=dialog" target="_blank" rel="noopener" aria-label="ثبت رایگان">
-              📝 ثبت رایگان لینک
+          <!-- Free registration CTA -->
+          <div style="margin-top:14px;text-align:center">
+            <a class="free-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSfU8A72A0baAkptPqDSGTnic0bu4UFXMDtriY1irqnwxIIIag/viewform?usp=dialog" target="_blank" rel="noopener" aria-label="ثبت رایگان لینک">
+              📝 ثبت رایگان لینک شما
             </a>
           </div>
 
-          <!-- short list of channels to reassure -->
-          <div style="margin-top:14px;text-align:right;color:var(--muted)">
-            <div style="font-weight:800;margin-bottom:6px">کانال‌هایی که لینک شما در آن‌ها ثبت می‌شود:</div>
-            <ul style="margin:0 0 0 14px;padding:0;list-style: none; text-align:right;">
-              <li>• کانال 93K — @ii_O_C_ii</li>
-              <li>• کانال 88K — @CDHCOGGEOQLXXONPXOIXPXXOZXSXOTXO</li>
-              <li>• کانال 38K — @CDHCCGGE0QLFZPNPLOIIPPSDZCSOAB</li>
-              <li>• کانال 32K — @IBFHGAHH0RQNWYKSCYCGHNQWIHJCSMCB</li>
-              <li>• کانال 25K — @linkdoniiirubikaa</li>
-            </ul>
+          <!-- Admin controls -->
+          <div style="margin-top:14px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+            <!-- Primary: open app then fallback -->
+            <button class="admin-btn open-admin" data-web="https://rubika.ir/Moslam_2024" aria-label="پیام به ادمین">
+              ✉️ پیام به ادمین — @Moslam_2024
+            </button>
+
+            <!-- visible web fallback -->
+            <a class="admin-small" href="https://rubika.ir/Moslam_2024" target="_blank" rel="noopener">نمایش پروفایل (وب)</a>
           </div>
         </div>
       </section>
@@ -213,9 +243,9 @@
       <section class="page" id="paid">
         <div class="card">
           <h3>ثبت پولی — تبلیغات ویژه</h3>
-          <p class="lead">برای تبلیغ هدفمند و نمایش در بالای کانال‌ها، با ادمین هماهنگ شو. قیمت منصفانه و بازدهی بالا.</p>
-          <div style="display:flex;gap:10px;flex-direction:column;align-items:center;margin-top:10px">
-            <button class="admin-btn open-admin" data-web="https://rubika.ir/Moslam_2024">ثبت تبلیغ ویژه — پیام به ادمین</button>
+          <p class="lead">می‌خواهی سریع‌تر دیده بشی؟ پکیج‌های تبلیغاتی ویژه ما لینک شما را در بالاترین جایگاه کانال‌ها قرار می‌دهد. برای جزئیات قیمت و ثبت، با ادمین در ارتباط باشید.</p>
+          <div style="display:flex;gap:10px;flex-direction:column;align-items:center;margin-top:12px">
+            <button class="admin-btn open-admin" data-web="https://rubika.ir/Moslam_2024">ارتباط با ادمین برای قیمت</button>
           </div>
         </div>
       </section>
@@ -224,7 +254,7 @@
       <section class="page" id="rules">
         <div class="card">
           <h3>قوانین مجموعه یخی</h3>
-          <ol style="text-align:right;color:var(--muted);line-height:1.7;padding-right:12px;margin:8px 0 0 0">
+          <ol style="text-align:right;color:#24606d;line-height:1.7;padding-right:12px;margin:8px 0 0 0">
             <li>لطفاً فقط لینک‌های سالم و مجاز ارسال کنید. (لینک‌های نامناسب حذف می‌شوند)</li>
             <li>از ارسال لینک تکراری یا تبلیغ مکرر خودداری کنید.</li>
             <li>ثبت رایگان برای معرفی اولیه است؛ تبلیغات گسترده در بخش ثبت پولی انجام می‌شود.</li>
@@ -242,20 +272,21 @@
           <p class="lead">برای هماهنگی تبلیغ یا هر سوالی، مستقیماً پیام بده:</p>
           <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:8px">
             <button class="admin-btn open-admin" data-web="https://rubika.ir/Moslam_2024">@Moslam_2024 — پیام به ادمین</button>
-            <a class="admin-btn" href="https://rubika.ir/Moslam_2024" target="_blank" rel="noopener" style="background:transparent;color:var(--accent-ice);border:1px solid rgba(0,153,255,0.12);">پروفایل (وب)</a>
+            <a class="admin-small" href="https://rubika.ir/Moslam_2024" target="_blank" rel="noopener">پروفایل (وب)</a>
           </div>
         </div>
       </section>
 
-      <!-- signature -->
+      <!-- Signature -->
       <section class="signature" id="signature">
-        <div class="sig-name">❄️ ساخته‌شده با خلاقیت و سرمای یخ‌های شمال توسط</div>
-        <div class="sig-name" style="margin-top:6px">مسلم — طراح مجموعه یخی 💎</div>
-        <div class="sig-sub" style="margin-top:8px"><a class="open-admin" href="https://rubika.ir/Moslam_2024" style="text-decoration:none;color:var(--muted);font-weight:800">@Moslam_2024</a></div>
+        <div class="sig-line1">❄️ ساخته‌شده با خلاقیت و سرمای یخ‌های شمال توسط</div>
+        <div class="sig-name">مسلم — طراح مجموعه یخی 💎</div>
+        <div style="margin-top:8px"><a class="admin-small open-admin" href="https://rubika.ir/Moslam_2024" style="text-decoration:none;color:#066a36">@Moslam_2024</a></div>
       </section>
 
     </main>
-    <footer style="text-align:center;padding:14px;color:var(--muted);font-size:13px">© لینکدونی مجموعه یخی — همه حقوق محفوظ است.</footer>
+
+    <footer>© لینکدونی مجموعه یخی — همه حقوق محفوظ است.</footer>
   </div>
 
   <!-- ========== Universal admin opener (tries app then fallback to web) ========== -->
@@ -263,18 +294,20 @@
   (function(){
     const ADMIN_WEB = 'https://rubika.ir/Moslam_2024';
     const ADMIN_APP_SCHEME = 'rubika://user?username=Moslam_2024';
-    const TIMEOUT = 800;
+    const TIMEOUT = 900;
 
     function openRubika(fallback){
       const webUrl = fallback || ADMIN_WEB;
       try {
-        // try to open app via iframe
+        // attempt to open app via iframe
         const ifrm = document.createElement('iframe');
         ifrm.style.display = 'none';
         ifrm.src = ADMIN_APP_SCHEME;
         document.body.appendChild(ifrm);
+
         setTimeout(() => {
           try { document.body.removeChild(ifrm); } catch(e){}
+          // fallback to web profile
           window.open(webUrl, '_blank', 'noopener');
         }, TIMEOUT);
       } catch (err) {
@@ -282,7 +315,7 @@
       }
     }
 
-    // bind clicks on .open-admin (buttons/links)
+    // bind clicks on .open-admin elements (buttons or links)
     document.addEventListener('click', function(e){
       const el = e.target.closest && e.target.closest('.open-admin');
       if(!el) return;
@@ -291,38 +324,27 @@
       openRubika(href);
     });
 
-    // simple navigation (SPA)
+    // Simple SPA navigation
     function show(page){
       document.querySelectorAll('.page').forEach(p=> p.classList.remove('active'));
       const el = document.getElementById(page);
       if(el) el.classList.add('active');
-      // nav active state
-      document.querySelectorAll('nav .nav-btn, nav button, nav a').forEach(b=> b.classList.remove('active'));
-      document.querySelectorAll('nav button[data-page]').forEach(b=>{
-        if(b.getAttribute('data-page')===page) b.classList.add('active');
-      });
+      // nav states
+      document.querySelectorAll('nav .nav-btn').forEach(b=> b.classList.toggle('active', b.getAttribute('data-page')===page));
       window.scrollTo({top:0,behavior:'smooth'});
     }
 
-    // attach nav buttons
-    document.querySelectorAll('.nav-btn').forEach(b=>{
-      b.addEventListener('click', ()=> {
-        const pg = b.getAttribute('data-page');
-        show(pg);
-      });
+    document.querySelectorAll('nav .nav-btn').forEach(b=>{
+      b.addEventListener('click', ()=> show(b.getAttribute('data-page')));
     });
-    // enter button
-    document.querySelectorAll('[data-goto]').forEach(b=> b.addEventListener('click', ()=> {
-      const to = b.getAttribute('data-goto');
-      show(to);
-    }));
-
-    // initial page: home
-    show('home');
+    document.querySelectorAll('[data-goto]').forEach(b=> b.addEventListener('click', ()=> show(b.getAttribute('data-goto'))));
 
     // reveal signature
-    window.addEventListener('load', ()=> setTimeout(()=> document.getElementById('signature').classList.add('show'), 350));
+    window.addEventListener('load', ()=> setTimeout(()=> document.getElementById('signature').classList.add('show'), 450));
+
+    // initial
+    show('home');
   })();
   </script>
 </body>
-              </html>
+</html>

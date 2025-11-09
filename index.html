@@ -1,358 +1,195 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>❄️ لینکدونی مجموعه یخی — Linkdoni Yakhi</title>
-  <meta name="description" content="لینکدونی مجموعه یخی — مرجع ثبت گروه و کانال روبیکا. ثبت رایگان، تبلیغات و ارتباط با ادمین @Moslam_2024" />
+  <!-- 🔹 اطلاعات سئو برای گوگل -->
+  <title>لینکدونی یخی ❄️ | ثبت رایگان کانال و گروه روبیکا | تبلیغات و افزایش عضو واقعی</title>
+
+  <meta name="description" content="لینکدونی یخی، بهترین محل برای ثبت رایگان کانال و گروه روبیکا. تبلیغ، جذب عضو واقعی و افزایش بازدید با مدیریت مسلم @Moslam_2024. لینک خودت رو رایگان ثبت کن و در مجموعه‌ای پر از گروه چت، گپ دوستانه و کانال‌های فعال عضو شو.">
+  <meta name="keywords" content="لینکدونی روبیکا, لینکدونی یخی, ثبت رایگان لینک, ثبت کانال روبیکا, ثبت گروه روبیکا, تبلیغات روبیکا, عضو واقعی روبیکا, افزایش ممبر روبیکا, لینکدونی فعال, گروه چت روبیکا, تبلیغ رایگان روبیکا, مجموعه لینکدونی, لینکدونی واقعی, کانال روبیکا, ثبت تبلیغ, تبلیغ کانال, روبیکا لینک, لینکدونی پر بازدید, تبلیغات یخی, لینکدونی مسلم, لینک دونی یخی">
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://mamydyhlylh-cloud.github.io/Ice-Linkdown/" />
+  <meta name="author" content="Moslam_2024" />
+  <meta property="og:title" content="لینکدونی یخی ❄️ | ثبت رایگان کانال و گروه روبیکا" />
+  <meta property="og:description" content="ثبت رایگان لینک روبیکا، افزایش بازدید و تبلیغ کانال با مجموعه یخی — ساخته‌شده توسط مسلم." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fa_IR" />
 
   <style>
-    :root{
-      --bg-dark:#071322;
-      --ice-blue:#06aee8;
-      --muted:#9ec6cf;
-      --card:#0f2730;
-      --glass: rgba(255,255,255,0.04);
-      --btn-dark: rgba(11,28,36,0.55); /* darker glass for buttons (not white) */
-      --btn-accent: linear-gradient(90deg,#18c2ff,#0aa3d6);
-      --radius:12px;
-      --text:#dff7ff;
+    body {
+      font-family: "Vazirmatn", sans-serif;
+      background: linear-gradient(180deg, #0c1b33, #164769);
+      color: #fff;
+      margin: 0;
+      overflow-x: hidden;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:"Vazir","IRANSans","Segoe UI",Roboto,Arial; background: linear-gradient(180deg, var(--bg-dark) 0%, #041821 60%); color:var(--text); direction:rtl}
-    a{color:inherit;text-decoration:none}
-    .app{max-width:1140px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;padding-bottom:40px}
-
-    /* header layout changed: brand left, action buttons right (RTL aware) */
-    header{z-index:60;position:relative;display:flex;align-items:center;justify-content:space-between;padding:16px 18px;gap:12px}
-    .brand{
-      display:flex;align-items:center;gap:12px;
-      background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      padding:10px 14px;border-radius:12px;backdrop-filter: blur(4px);
-      box-shadow: 0 8px 30px rgba(2,12,20,0.35);
+    header {
+      text-align: center;
+      padding: 20px;
     }
-    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,#e6f9ff12,#dffcff10);display:flex;align-items:center;justify-content:center}
-    .brand-title{font-weight:900;font-size:18px;color:var(--text)}
-    .brand-sub{font-size:12px;color:var(--muted);margin-top:4px}
-
-    /* action buttons group (right side of header) */
-    .header-actions{display:flex;gap:10px;align-items:center}
-    .action-btn{
-      display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:999px;border:1px solid rgba(255,255,255,0.04);
-      background:var(--btn-dark); color:var(--text); font-weight:800; cursor:pointer; transition:transform .14s ease, box-shadow .14s ease;
-      backdrop-filter: blur(6px);
+    header h1 {
+      font-size: 26px;
+      color: #aee7ff;
+      text-shadow: 0 0 12px #7fd0ff;
     }
-    .action-btn:hover{transform:translateY(-3px); box-shadow:0 12px 36px rgba(3,60,90,0.12)}
-    .action-btn.primary{
-      background: var(--btn-accent);
-      box-shadow: 0 12px 40px rgba(10,150,210,0.16);
-      color:#fff;
-      border:0;
+    header p {
+      color: #bcd7e6;
+      font-weight: 600;
     }
-    .action-btn.small{padding:8px 10px;font-size:14px;border-radius:10px}
-
-    /* nav */
-    nav{display:flex;gap:10px;justify-content:center;padding:8px 12px;z-index:50}
-    .nav-btn{padding:8px 14px;border-radius:999px;border:0;background:transparent;color:var(--text);font-weight:700;cursor:pointer;transition:all .18s ease}
-    .nav-btn.active{background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); box-shadow: 0 8px 30px rgba(2,12,20,0.25)}
-
-    /* hero simplified (we keep the canvas from before) */
-    .hero-wrap{position:relative;z-index:20;overflow:hidden;border-radius:18px;margin:14px 18px 6px}
-    .hero{position:relative;min-height:64vh;display:flex;align-items:center;justify-content:center;padding:48px 20px;text-align:center;color:var(--text)}
-    #heroCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
-    .hero-overlay{position:relative;z-index:3;max-width:940px;padding:28px;border-radius:12px;background: linear-gradient(180deg, rgba(4,18,28,0.45), rgba(6,22,30,0.3));border:1px solid rgba(255,255,255,0.03);backdrop-filter: blur(6px)}
-    .hero-title{font-size:32px;font-weight:900;margin:0 0 10px}
-    .hero-sub{font-size:15px;color:var(--muted);margin:0 0 18px;line-height:1.7}
-
-    /* CTA area inside hero (we removed extra share features) */
-    .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-    .cta{display:inline-flex;align-items:center;gap:10px;padding:12px 22px;border-radius:999px;border:0;font-weight:900;color:white;cursor:pointer;background:linear-gradient(90deg,#18c2ff,#0aa3d6);box-shadow:0 10px 40px rgba(10,160,220,0.18)}
-    .cta.secondary{background:var(--btn-dark);border:1px solid rgba(255,255,255,0.04);color:var(--text)}
-    .cta:hover{transform:translateY(-4px)}
-
-    /* pages */
-    main{padding:18px 22px 40px;z-index:10}
-    .page{display:none}
-    .page.active{display:block}
-    .card{background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:12px;padding:14px;margin-bottom:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 8px 30px rgba(2,12,20,0.25)}
-    .channels-list{display:flex;flex-direction:column;gap:12px;margin-top:10px}
-    .ch-btn{display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px;color:white;font-weight:800;text-decoration:none;border:0;transition:transform .12s ease}
-    .ch-dot{width:48px;height:48px;border-radius:10px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-weight:900;color:rgba(255,255,255,0.12)}
-    .ch-info{text-align:right;flex:1}
-    .admin-btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;background:var(--btn-dark);color:var(--text);font-weight:900;border:1px solid rgba(255,255,255,0.03);cursor:pointer}
-    .admin-small{display:inline-block;padding:8px 12px;border-radius:999px;background:transparent;color:var(--text);font-weight:800;border:1px solid rgba(255,255,255,0.04);text-decoration:none}
-
-    footer{padding:18px;text-align:center;color:var(--muted);font-size:13px}
-
-    @media(max-width:860px){
-      header{flex-direction:column;align-items:stretch;gap:10px}
-      .header-actions{justify-content:center}
-      .hero-title{font-size:22px}
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background: rgba(255,255,255,0.08);
+      border-radius: 14px;
+      margin: 10px auto;
+      width: 95%;
+      backdrop-filter: blur(12px);
+    }
+    nav button {
+      background: none;
+      border: none;
+      color: #e8f9ff;
+      font-weight: bold;
+      padding: 10px 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    nav button:hover, nav button.active {
+      background: rgba(255,255,255,0.2);
+      border-radius: 8px;
+    }
+    section {
+      max-width: 800px;
+      margin: 20px auto;
+      background: rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+    h2 {
+      color: #aee7ff;
+      text-align: center;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      background: linear-gradient(90deg, #00aaff, #0077ff);
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 800;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(90deg, #33ccff, #3399ff);
+    }
+    .admin-btn {
+      display: inline-block;
+      padding: 12px 20px;
+      background: linear-gradient(90deg, #49e6c6, #23b3a3);
+      color: #fff;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 900;
+      box-shadow: 0 4px 15px rgba(0,255,255,0.25);
+      transition: 0.3s;
+    }
+    .admin-btn:hover {
+      background: linear-gradient(90deg, #00f6cc, #00bda3);
+      transform: translateY(-2px);
+    }
+    footer {
+      text-align: center;
+      color: #a8d5e4;
+      font-size: 14px;
+      padding: 16px;
+      margin-top: 20px;
+    }
+    /* ❄️ برف در حال ریزش */
+    .snow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-image: url('https://cdn.pixabay.com/photo/2016/03/09/09/22/snow-1246249_960_720.png');
+      background-size: cover;
+      animation: snowfall 20s linear infinite;
+      opacity: 0.4;
+      z-index: -1;
+    }
+    @keyframes snowfall {
+      from { background-position: 0 0; }
+      to { background-position: 0 1000px; }
     }
   </style>
 </head>
 <body>
-  <div class="app" id="app">
-    <!-- header: brand (left) + actions (right) -->
-    <header>
-      <div class="brand" role="banner" aria-label="لوگو و نام سایت">
-        <div class="logo" aria-hidden="true">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2L13.6 9L20 10.6L13.6 12L12 19L10.4 12L4 10.6L10.4 9L12 2Z" fill="#00b7ee" opacity="0.95"/>
-          </svg>
-        </div>
-        <div style="text-align:right">
-          <div class="brand-title">❄️ لینکدونی مجموعه یخی ❄️</div>
-          <div class="brand-sub">مرکز ثبت گروه‌ها و کانال‌های روبیکا — ثبت رایگان و تبلیغات</div>
-        </div>
-      </div>
+  <div class="snow"></div>
 
-      <!-- action buttons -->
-      <div class="header-actions" role="group" aria-label="دسترسی سریع">
-        <!-- Register / Login button (links to your Google Form for registering) -->
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfU8A72A0baAkptPqDSGTnic0bu4UFXMDtriY1irqnwxIIIag/viewform?usp=dialog"
-           class="action-btn primary" role="button" aria-label="ثبت / لاگین">
-          ثبت / لاگین
-        </a>
+  <header>
+    <h1>❄️ لینکدونی مجموعه یخی ❄️</h1>
+    <p>جایی برای ثبت لینک، تبلیغ و رشد در روبیکا</p>
+  </header>
 
-        <!-- Admin PV button (opens rubika profile; uses JS deep-link attempt) -->
-        <button class="action-btn small open-admin" data-web="https://rubika.ir/moslam_2024" aria-label="پیوی ادمین">
-          پیوی ادمین — @Moslam_2024
-        </button>
-      </div>
-    </header>
+  <nav>
+    <button class="active" onclick="showPage('home')">خانه</button>
+    <button onclick="showPage('free')">ثبت رایگان</button>
+    <button onclick="showPage('paid')">ثبت پولی</button>
+    <button onclick="showPage('rules')">قوانین</button>
+    <button onclick="showPage('contact')">ارتباط</button>
+  </nav>
 
-    <!-- nav -->
-    <nav role="navigation" aria-label="منو سایت">
-      <button class="nav-btn active" data-page="home">خانه</button>
-      <button class="nav-btn" data-page="channels">ثبت رایگان</button>
-      <button class="nav-btn" data-page="paid">ثبت پولی</button>
-      <button class="nav-btn" data-page="rules">قوانین</button>
-      <button class="nav-btn" data-page="contact">ارتباط</button>
-    </nav>
+  <section id="home">
+    <h2>به دنیای یخی روبیکا خوش اومدی 💎</h2>
+    <p style="text-align:center;color:#d7f3ff;">جایی که تبلیغاتت می‌درخشه و لینک‌هات در برف دیده می‌شن!</p>
+    <a href="#free" class="btn">ثبت رایگان لینک ❄️</a>
+  </section>
 
-    <!-- HERO -->
-    <div class="hero-wrap">
-      <section class="hero page active" id="home" aria-labelledby="hero-title">
-        <canvas id="heroCanvas"></canvas>
-        <div class="hero-overlay" role="region" aria-label="معرفی">
-          <h1 id="hero-title" class="hero-title">❄️ لینکدونی مجموعه یخی ❄️</h1>
-          <p class="hero-sub">💎 به دنیای یخی روبیکا خوش اومدی 💎<br>مرجع ثبت گروه و کانال؛ چت دوستانه، تبلیغات هدفمند و جذب عضو واقعی.</p>
+  <section id="free" style="display:none">
+    <h2>ثبت رایگان لینک</h2>
+    <p>لینک کانال یا گروه خودت رو رایگان ثبت کن تا در ۵ کانال پربازدید روبیکا منتشر بشه.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfU8A72A0baAkptPqDSGTnic0bu4UFXMDtriY1irqnwxIIIag/viewform" target="_blank" class="btn">📝 فرم ثبت رایگان لینک</a>
+  </section>
 
-          <div class="cta-row" role="group">
-            <button class="cta" data-goto="channels" aria-label="ورود به ثبت رایگان">❄️ ورود به مجموعه یخی</button>
-            <a class="cta secondary" href="https://rubika.ir/moslam_2024" target="_blank" rel="noopener" aria-label="پیوی ادمین">💬 پیوی ادمین</a>
-          </div>
-        </div>
-      </section>
-    </div>
+  <section id="paid" style="display:none">
+    <h2>تبلیغات ویژه (ثبت پولی)</h2>
+    <p>برای جایگاه‌های بالاتر و بازدید بیشتر با ادمین در ارتباط باش.</p>
+    <a href="https://rubika.ir/moslam_2024" target="_blank" class="admin-btn">💬 پیام به ادمین</a>
+  </section>
 
-    <!-- MAIN -->
-    <main>
-      <section class="page" id="channels">
-        <div class="card channels-wrap" role="main" aria-labelledby="channels-title">
-          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
-            <div>
-              <div id="channels-title" style="font-weight:900;font-size:16px">🎯 ثبت رایگان در کانال‌ها</div>
-              <div style="color:var(--muted);font-weight:700;margin-top:6px">بدون هزینه — ثبت سریع</div>
-            </div>
-            <div style="text-align:left;color:var(--muted);font-size:13px">ارسال لینک پس از بررسی منتشر می‌شود</div>
-          </div>
+  <section id="rules" style="display:none">
+    <h2>قوانین مجموعه یخی</h2>
+    <ol style="line-height:1.8">
+      <li>ارسال فقط لینک‌های سالم و مجاز.</li>
+      <li>لینک تکراری حذف خواهد شد.</li>
+      <li>لینک نامناسب مسدود می‌شود.</li>
+      <li>رعایت احترام در پیام‌ها الزامی است.</li>
+    </ol>
+  </section>
 
-          <p class="lead" style="text-align:right;margin-top:12px">لینک یا کانال خودت رو رایگان ثبت کن — لینک شما بعد از بررسی در کانال‌های پربازدید ما منتشر می‌شود تا بازدید و عضو واقعی بگیری.</p>
+  <section id="contact" style="display:none">
+    <h2>ارتباط با ما</h2>
+    <p>برای تبلیغات یا پشتیبانی، از طریق روبیکا پیام بده:</p>
+    <a href="https://rubika.ir/moslam_2024" target="_blank" class="admin-btn">✉️ پیام به ادمین — @Moslam_2024</a>
+  </section>
 
-          <div class="channels-list" role="list">
-            <a class="ch-btn c1" href="https://rubika.ir/ii_O_C_ii" target="_blank" rel="noopener" role="listitem" aria-label="کانال 93k">
-              <div class="ch-dot">1</div>
-              <div class="ch-info"><div class="name">کانال 93K</div><div class="meta">@ii_O_C_ii</div></div>
-            </a>
+  <footer>© 2025 لینکدونی مجموعه یخی — ساخته شده توسط مسلم 💎</footer>
 
-            <a class="ch-btn c2" href="https://rubika.ir/CDHCOGGEOQLXXONPXOIXPXXOZXSXOTXO" target="_blank" rel="noopener" role="listitem" aria-label="کانال 88k">
-              <div class="ch-dot">2</div>
-              <div class="ch-info"><div class="name">کانال 88K</div><div class="meta">@CDHCOGGEOQLXXONPXOIXPXXOZXSXOTXO</div></div>
-            </a>
-
-            <a class="ch-btn c3" href="https://rubika.ir/newchannel_1" target="_blank" rel="noopener" role="listitem" aria-label="کانال جدید 1">
-              <div class="ch-dot">3</div>
-              <div class="ch-info"><div class="name">کانال ویژه — سرگرمی</div><div class="meta">@newchannel_1</div></div>
-            </a>
-
-            <a class="ch-btn c4" href="https://rubika.ir/newchannel_2" target="_blank" rel="noopener" role="listitem" aria-label="کانال جدید 2">
-              <div class="ch-dot">4</div>
-              <div class="ch-info"><div class="name">کانال 32K</div><div class="meta">@newchannel_2</div></div>
-            </a>
-
-            <a class="ch-btn c5" href="https://rubika.ir/linkdoniiirubikaa" target="_blank" rel="noopener" role="listitem" aria-label="کانال 25k">
-              <div class="ch-dot">5</div>
-              <div class="ch-info"><div class="name">کانال 25K</div><div class="meta">@linkdoniiirubikaa</div></div>
-            </a>
-          </div>
-
-          <div style="margin-top:14px;text-align:center">
-            <a class="action-btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfU8A72A0baAkptPqDSGTnic0bu4UFXMDtriY1irqnwxIIIag/viewform?usp=dialog" target="_blank" rel="noopener">📝 ثبت رایگان لینک شما</a>
-          </div>
-
-          <div style="margin-top:14px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
-            <button class="admin-btn open-admin" data-web="https://rubika.ir/moslam_2024" aria-label="پیام به ادمین">✉️ پیام به ادمین — @Moslam_2024</button>
-            <a class="admin-small" href="https://rubika.ir/moslam_2024" target="_blank" rel="noopener">نمایش پروفایل (وب)</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="page" id="paid">
-        <div class="card">
-          <h3>ثبت پولی — تبلیغات ویژه</h3>
-          <p class="lead">می‌خواهی سریع‌تر دیده بشی؟ پکیج‌های تبلیغاتی ویژه ما لینک شما را در بالاترین جایگاه کانال‌ها قرار می‌دهد. برای جزئیات قیمت و ثبت، با ادمین در ارتباط باشید.</p>
-          <div style="display:flex;gap:10px;flex-direction:column;align-items:center;margin-top:12px">
-            <button class="admin-btn open-admin" data-web="https://rubika.ir/moslam_2024">ارتباط با ادمین برای قیمت</button>
-          </div>
-        </div>
-      </section>
-
-      <section class="page" id="rules">
-        <div class="card">
-          <h3>قوانین مجموعه یخی</h3>
-          <ol style="text-align:right;color:var(--muted);line-height:1.7;padding-right:12px;margin:8px 0 0 0">
-            <li>لطفاً فقط لینک‌های سالم و مجاز ارسال کنید. (لینک‌های نامناسب حذف می‌شوند)</li>
-            <li>از ارسال لینک تکراری یا تبلیغ مکرر خودداری کنید.</li>
-            <li>ثبت رایگان برای معرفی اولیه است؛ تبلیغات گسترده در بخش ثبت پولی انجام می‌شود.</li>
-            <li>لینک‌های اسپم یا فریبنده مسدود خواهند شد.</li>
-            <li>بی‌احترامی به کاربران یا ادمین ممنوع است — فضای دوستانه حفظ شود.</li>
-            <li>ارسال لینک به معنی پذیرش قوانین است.</li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="page" id="contact">
-        <div class="card">
-          <h3>ارتباط با ما</h3>
-          <p class="lead">برای هماهنگی تبلیغ یا هر سوالی، مستقیماً پیام بده:</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:8px">
-            <button class="admin-btn open-admin" data-web="https://rubika.ir/moslam_2024">@Moslam_2024 — پیام به ادمین</button>
-            <a class="admin-small" href="https://rubika.ir/moslam_2024" target="_blank" rel="noopener">پروفایل (وب)</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="card" id="signature-block" style="text-align:center">
-        <div style="font-size:13px;color:var(--muted)">❄️ ساخته‌شده با خلاقیت و سرمای یخ‌های شمال توسط</div>
-        <div style="font-size:16px;font-weight:900;margin-top:6px">مسلم — طراح مجموعه یخی 💎</div>
-      </section>
-    </main>
-
-    <footer>© لینکدونی مجموعه یخی — همه حقوق محفوظ است.</footer>
-  </div>
-
-  <!-- JS: canvas animation + UI logic + admin deep link -->
   <script>
-  (function(){
-    const ADMIN_WEB = 'https://rubika.ir/moslam_2024';
-    const ADMIN_APP_SCHEME = 'rubika://user?username=moslam_2024';
-    const TIMEOUT = 900;
-
-    // try open rubika app, else open web
-    function openRubika(fallback){
-      const webUrl = fallback || ADMIN_WEB;
-      try {
-        const ifrm = document.createElement('iframe');
-        ifrm.style.display = 'none';
-        ifrm.src = ADMIN_APP_SCHEME;
-        document.body.appendChild(ifrm);
-        setTimeout(() => {
-          try { document.body.removeChild(ifrm); } catch(e){}
-          window.open(webUrl, '_blank', 'noopener');
-        }, TIMEOUT);
-      } catch (err) {
-        window.open(webUrl, '_blank', 'noopener');
-      }
-    }
-
-    // handle open-admin clicks (header + anywhere)
-    document.addEventListener('click', function(e){
-      const el = e.target.closest && e.target.closest('.open-admin');
-      if(!el) return;
-      e.preventDefault();
-      const href = el.getAttribute('href') || el.dataset.web || ADMIN_WEB;
-      openRubika(href);
-    });
-
-    // navigation show/hide pages
-    function show(page){
-      document.querySelectorAll('.page').forEach(p=> p.classList.remove('active'));
-      const el = document.getElementById(page);
-      if(el) el.classList.add('active');
-      document.querySelectorAll('nav .nav-btn').forEach(b=> b.classList.toggle('active', b.getAttribute('data-page')===page));
+    function showPage(id){
+      document.querySelectorAll('section').forEach(s=>s.style.display='none');
+      document.getElementById(id).style.display='block';
+      document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+      document.querySelector(`nav button[onclick="showPage('${id}')"]`).classList.add('active');
       window.scrollTo({top:0,behavior:'smooth'});
     }
-    document.querySelectorAll('nav .nav-btn').forEach(b=> b.addEventListener('click', ()=> show(b.getAttribute('data-page'))));
-    document.querySelectorAll('[data-goto]').forEach(b=> b.addEventListener('click', ()=> show(b.getAttribute('data-goto'))));
-    window.addEventListener('load', ()=> { show('home'); });
-
-    // Canvas animation (stars, snow, parallax) - lightweight
-    const canvas = document.getElementById('heroCanvas');
-    const ctx = canvas.getContext ? canvas.getContext('2d') : null;
-    let w=0,h=0, DPR = window.devicePixelRatio || 1;
-    function resize(){ 
-      w = canvas.clientWidth;
-      h = canvas.clientHeight;
-      canvas.width = Math.floor(w * DPR);
-      canvas.height = Math.floor(h * DPR);
-      ctx && ctx.scale(DPR, DPR);
-    }
-    function rand(a,b){ return a + Math.random()*(b-a); }
-    const stars = [], snow = [];
-    function init(){
-      stars.length = 0; snow.length = 0;
-      const starCount = Math.floor((w*h)/12000);
-      for(let i=0;i<starCount;i++) stars.push({x:Math.random()*w,y:Math.random()*h*0.5,r:Math.random()*1.6+0.3,tw:Math.random()*1.6,ph:Math.random()*Math.PI*2});
-      const snowCount = Math.floor((w*h)/15000);
-      for(let i=0;i<snowCount;i++) snow.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.6+0.6,speed:rand(10,45),drift:rand(-20,20),ang:Math.random()*Math.PI*2});
-    }
-    function drawBg(t){
-      const grad = ctx.createLinearGradient(0,0,0,h);
-      grad.addColorStop(0,'#071322');grad.addColorStop(0.45,'#031625');grad.addColorStop(1,'#00121a');
-      ctx.fillStyle = grad; ctx.fillRect(0,0,w,h);
-    }
-    function drawStars(t){
-      for(const s of stars){
-        const tw = 0.4 + Math.sin((t/1000)*s.tw + s.ph)*0.6;
-        ctx.beginPath(); ctx.fillStyle = 'rgba(180,235,255,' + (0.35*tw) + ')'; ctx.arc(s.x,s.y,s.r*tw,0,Math.PI*2); ctx.fill();
-      }
-    }
-    function drawSnow(dt){
-      for(const f of snow){
-        f.y += (f.speed * dt/1000);
-        f.x += Math.sin((f.y/60) + f.ang) * (f.drift/100);
-        if(f.y > h + 10){ f.y = -10; f.x = Math.random()*w; }
-        ctx.beginPath(); ctx.fillStyle = 'rgba(255,255,255,0.85)'; ctx.arc(f.x,f.y,f.r,0,Math.PI*2); ctx.fill();
-      }
-    }
-    let last = performance.now();
-    function loop(t){
-      if(!ctx) return;
-      const now = performance.now(); const dt = now - last; last = now;
-      ctx.clearRect(0,0,w,h);
-      drawBg(t); drawStars(t); drawSnow(dt);
-      requestAnimationFrame(loop);
-    }
-    function start(){
-      if(!ctx) return;
-      resize(); init(); last = performance.now(); requestAnimationFrame(loop);
-    }
-    window.addEventListener('resize', ()=>{ if(ctx){ ctx.setTransform(1,0,0,1,0,0); resize(); init(); }});
-    start();
-
-    // keyboard accessibility for action buttons
-    document.querySelectorAll('.action-btn, .cta, .nav-btn, .admin-btn').forEach(el=>{
-      el.addEventListener('keydown', function(e){
-        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); el.click(); }
-      });
-    });
-
-  })();
   </script>
 </body>
 </html>

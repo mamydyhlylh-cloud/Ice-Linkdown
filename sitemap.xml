@@ -1,15 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
-    <loc>https://mamydyhlylh-cloud.github.io/Ice-Linkdown/</loc>
+    <loc>https://mamydyhlylh-cloud.github.io/Ice-Linkdown/index.html</loc>
     <lastmod>2025-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
   <url>
-    <loc>https://mamydyhlylh-cloud.github.io/Ice-Linkdown/about.html</loc>
+    <loc>https://mamydyhlylh-cloud.github.io/Ice-Linkdown/register-free.html</loc>
     <lastmod>2025-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <url>
+    <loc>https://mamydyhlylh-cloud.github.io/Ice-Linkdown/register-paid.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://mamydyhlylh-cloud.github.io/Ice-Linkdown/rules.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://mamydyhlylh-cloud.github.io/Ice-Linkdown/contact.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>

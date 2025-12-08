@@ -1,107 +1,122 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fa">
 <head>
-<meta charset="utf-8" />
-<title>لینکدونی یخی – ثبت لینک کانال و گروه</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="لینکدونی یخی — ثبت رایگان و پولی لینک کانال و گروه روبیکا. تبلیغات هدفمند و جذب ممبر واقعی.">
-<meta name="keywords" content="لینکدونی یخی, لینکدونی رایگان, لینکدونی روبیکا, ثبت کانال, گروه چت, گپ, ممبر واقعی, تبلیغات رایگان, تبادل لینک, افزایش ممبر">
+<title>لینکدونی یخی – ثبت لینک کانال و گروه</title>
 <link rel="icon" href="https://github.com/mamydyhlylh-cloud/Ice-Linkdown/blob/main/favicon.png" type="image/png">
+
+<meta name="description" content="لینکدونی یخی — مرکز ثبت لینک کانال‌ها و گروه‌ها. ثبت رایگان و ثبت پولی با جذب ممبر واقعی و نمایش در کانال‌های پر بازدید.">
+<meta name="keywords" content="لینکدونی یخی, ثبت رایگان, ثبت پولی, کانال روبیکا, گروه چت, گپ, تبلیغات, تبادل لینک, افزایش ممبر, پر بازدید">
+
 <style>
-  body{margin:0;font-family:Vazir,sans-serif;background:#041426;color:#eaf6ff;direction:rtl}
-  a{text-decoration:none;color:inherit}
-  .wrap{max-width:1100px;margin:20px auto;padding:15px;background:#072032;border-radius:12px}
-  header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap}
-  .logo{width:50px;height:50px;background:linear-gradient(135deg,#dffcff,#9fe8ff);display:flex;align-items:center;justify-content:center;border-radius:12px;font-weight:900;color:#022}
-  .nav-btn{padding:10px 16px;margin:5px;border-radius:10px;background:rgba(255,255,255,0.02);border:1px solid rgba(159,232,255,0.18);cursor:pointer;font-weight:800;color:#9fe8ff;transition:.2s}
-  .nav-btn:hover{transform:translateY(-2px);box-shadow:0 5px 15px rgba(0,0,0,0.5)}
-  .nav-btn.active{box-shadow: inset 0 -2px 10px rgba(159,232,255,0.04);}
-  .section{display:none;padding:20px;margin-top:15px;border-radius:12px;background:#072032}
-  .section.active{display:block}
-  .hero-banner{width:100%;height:180px;background:linear-gradient(135deg,#9fe8ff,#dffcff);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
-  .hero-title{font-size:22px;font-weight:900;text-align:center;margin:0}
-  .hero-sub{font-size:14px;color:#022;text-align:center;margin-top:6px}
-  .card{padding:12px;border-radius:10px;background:rgba(255,255,255,0.02);margin-top:10px}
-  .cta{display:inline-block;padding:8px 12px;border-radius:8px;background:rgba(159,232,255,0.2);color:#022;font-weight:800;margin:5px}
-  .channel-btn{display:inline-block;padding:6px 10px;margin:4px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(159,232,255,0.18);font-weight:700;color:#9fe8ff}
-  footer{margin-top:15px;text-align:center;font-size:13px;color:#9fdbe8}
+:root{
+  --bg:#041426;
+  --panel:#072032;
+  --accent:#9fe8ff;
+  --btn-border: rgba(159,232,255,0.18);
+  --muted:#9fdbe8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Vazir, Tahoma, sans-serif;direction:rtl;background:linear-gradient(180deg,#00121a,#021a2a);color:#eaf6ff;line-height:1.5}
+.wrap{max-width:1000px;margin:24px auto;padding:16px;background:var(--panel);border-radius:12px}
+header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:20px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:50px;height:50px;border-radius:12px;background:linear-gradient(135deg,#dffcff,#9fe8ff);display:flex;align-items:center;justify-content:center;color:#022;font-weight:900;font-size:18px}
+.nav-btn{padding:10px 16px;margin:4px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid var(--btn-border);color:var(--accent);font-weight:800;cursor:pointer;transition:0.2s;}
+.nav-btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,0.5)}
+.nav-btn.active{box-shadow: inset 0 -2px 18px rgba(159,232,255,0.04);}
+.section{display:none;padding:20px;border-radius:12px;background:var(--panel);margin-top:10px}
+.section.active{display:block}
+h1{margin-bottom:12px}
+a.cta{display:inline-block;padding:10px 14px;border-radius:12px;background:var(--accent);color:#022;font-weight:800;text-decoration:none;transition:0.2s}
+a.cta:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,0.5)}
+.channel-btn{display:inline-block;padding:6px 10px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid var(--btn-border);color:var(--accent);text-decoration:none;font-weight:700;margin:4px;font-size:13px;}
+.channel-btn:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,0.4)}
+.admin-btn{display:inline-block;padding:8px 14px;border-radius:10px;background:linear-gradient(90deg,#8ef0ff,#bff7ff);color:#022;text-decoration:none;font-weight:900;border:0}
+footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+.hero-banner{width:100%;height:180px;border-radius:12px;background:linear-gradient(135deg,#beeefc,#9fe8ff);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.hero-text{font-weight:900;font-size:22px;color:#022;text-align:center}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header>
-    <div class="logo">یخ</div>
-    <nav>
-      <button class="nav-btn active" data-target="home">خانه</button>
-      <button class="nav-btn" data-target="free">ثبت رایگان</button>
-      <button class="nav-btn" data-target="paid">ثبت پولی</button>
-      <button class="nav-btn" data-target="contact">ارتباط با ما</button>
-    </nav>
-  </header>
+<header>
+<div class="brand">
+<div class="logo">یخ</div>
+<div>
+<div class="title">لینکدونی یخی</div>
+<div class="subtitle">مرکز ثبت لینک کانال و گروه</div>
+</div>
+</div>
+<nav>
+<button class="nav-btn active" data-target="home">خانه</button>
+<button class="nav-btn" data-target="free">ثبت رایگان</button>
+<button class="nav-btn" data-target="paid">ثبت پولی</button>
+<button class="nav-btn" data-target="contact">ارتباط با ما</button>
+</nav>
+</header>
 
-  <div class="sections">
-    <!-- HOME -->
-    <section id="home" class="section active">
-      <div class="hero-banner"></div>
-      <div class="hero-title">مرکز ثبت لینک یخی</div>
-      <div class="hero-sub">ثبت لینک کانال و گروه شما در روبیکا با ادمین‌های مجموعی یخی</div>
-    </section>
+<!-- HOME -->
+<section id="home" class="section active">
+<div class="hero-banner">
+<div class="hero-text">مرکز ثبت لینک یخی — دیده شوید و رشد کنید</div>
+</div>
+<p class="muted">در این سایت می‌توانید لینک کانال و گروه خود را ثبت کنید و در کانال‌های پر بازدید مجموعی یخی نمایش داده شوید.</p>
+</section>
 
-    <!-- FREE -->
-    <section id="free" class="section">
-      <div class="card">
-        <h2>ثبت رایگان</h2>
-        <p>لینک شما پس از تأیید ادمین‌های مجموعی یخی در کانال‌ها ثبت می‌شود.</p>
-        <a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLSfU8A72A0baAkptPqDSGTnic0bu4UFXMDtriY1irqnwxIIIag/viewform?usp=dialog" target="_blank">کلیک کنید و ثبت کنید</a>
-        <div style="margin-top:10px">
-          <a class="channel-btn" href="https://rubika.ir/ii_O_C_ii" target="_blank">@ii_O_C_ii</a>
-          <a class="channel-btn" href="https://rubika.ir/CDHCOGGEOQLXXONPXOIXPXXOZXSXOTXO" target="_blank">@CDHCOGGEOQLXXONPXOIXPXXOZXSXOTXO</a>
-          <a class="channel-btn" href="https://rubika.ir/CDHCOGGEOQLXXONPXOIXPXXOOZHWOKO" target="_blank">@CDHCOGGEOQLXXONPXOIXPXXOOZHWOKO</a>
-          <a class="channel-btn" href="https://rubika.ir/CDHCCGGE0QLFZPNPLOIIPPSDZCSOAB" target="_blank">@CDHCCGGE0QLFZPNPLOIIPPSDZCSOAB</a>
-          <a class="channel-btn" href="https://rubika.ir/IBFHGAHH0RQNWYKSCYCGHNQWIHJCSMCB" target="_blank">@IBFHGAHH0RQNWYKSCYCGHNQWIHJCSMCB</a>
-          <a class="channel-btn" href="https://rubika.ir/linkdoniiirubikaa" target="_blank">@linkdoniiirubikaa</a>
-          <a class="channel-btn" href="https://rubika.ir/CDHCCGGE0QLFZPNPLOIIPPSDZCSQNGS" target="_blank">@CDHCCGGE0QLFZPNPLOIIPPSDZCSQNGS</a>
-        </div>
-        <p style="margin-top:8px;font-size:13px;color:#bfe8f8;">برای حمایت از ما، لطفاً در این ۷ کانال عضو شوید ♥️</p>
-      </div>
-    </section>
+<!-- ثبت رایگان -->
+<section id="free" class="section">
+<h1>ثبت رایگان</h1>
+<p>برای ثبت لینک کانال یا گروه خود، روی لینک زیر کلیک کنید:</p>
+<p style="margin:10px 0"><a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLSfU8A72A0baAkptPqDSGTnic0bu4UFXMDtriY1irqnwxIIIag/viewform?usp=dialog" target="_blank">رفتن به فرم ثبت رایگان</a></p>
 
-    <!-- PAID -->
-    <section id="paid" class="section">
-      <div class="card">
-        <h2>ثبت پولی</h2>
-        <p>لینک شما در کانال‌های مجموعی یخی به‌صورت رسمی ثبت می‌شود و بیشترین بازدید را خواهد داشت.</p>
-        <p>متن جذاب و رسمی برای ثبت پولی و دیده شدن لینک شما.</p>
-      </div>
-    </section>
+<p style="margin-top:12px">پس از تایید ادمین‌های مجموعی یخی، لینک شما در این ۷ کانال ثبت می‌شود:</p>
+<div>
+<a class="channel-btn" href="https://rubika.ir/ii_O_C_ii" target="_blank">@ii_O_C_ii — 93k</a>
+<a class="channel-btn" href="https://rubika.ir/CDHCOGGEOQLXXONPXOIXPXXOZXSXOTXO" target="_blank">@CDHCOGGEOQLXXONPXOIXPXXOZXSXOTXO — 88k</a>
+<a class="channel-btn" href="https://rubika.ir/CDHCOGGEOQLXXONPXOIXPXXOOZHWOKO" target="_blank">@CDHCOGGEOQLXXONPXOIXPXXOOZHWOKO — 50k</a>
+<a class="channel-btn" href="https://rubika.ir/CDHCCGGE0QLFZPNPLOIIPPSDZCSOAB" target="_blank">@CDHCCGGE0QLFZPNPLOIIPPSDZCSOAB — 40k</a>
+<a class="channel-btn" href="https://rubika.ir/IBFHGAHH0RQNWYKSCYCGHNQWIHJCSMCB" target="_blank">@IBFHGAHH0RQNWYKSCYCGHNQWIHJCSMCB — 32k</a>
+<a class="channel-btn" href="https://rubika.ir/linkdoniiirubikaa" target="_blank">@linkdoniiirubikaa — 25k</a>
+<a class="channel-btn" href="https://rubika.ir/CDHCCGGE0QLFZPNPLOIIPPSDZCSQNGS" target="_blank">@CDHCCGGE0QLFZPNPLOIIPPSDZCSQNGS — 21k</a>
+</div>
+<p style="margin-top:12px"><a class="cta" href="https://rubika.ir/ii_O_C_ii" target="_blank">برای حمایت از ما در کانال‌ها عضو شوید ♥️</a></p>
+</section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <div class="card">
-        <h2>ارتباط با ما</h2>
-        <p>برای ثبت و هماهنگی لینک‌ها، پیام دهید:</p>
-        <a class="cta" href="https://rubika.ir/moslam_2024" target="_blank">پیام به ادمین — Moslam_2024@</a>
-      </div>
-    </section>
-  </div>
+<!-- ثبت پولی -->
+<section id="paid" class="section">
+<h1>ثبت پولی</h1>
+<p>با ثبت پولی لینک خود، تبلیغ شما در کانال‌های مجموعی یخی نمایش داده می‌شود و جذب ممبر بیشتری خواهید داشت.</p>
+<p style="margin-top:12px">ثبت لینک شما در کانال‌های پر بازدید با بالاترین کیفیت و بیشترین تاثیر انجام می‌شود.</p>
+</section>
 
-  <footer>
-    ساخته‌شده توسط مسلم — لینکدونی یخی — © <span id="year"></span>
-  </footer>
+<!-- ارتباط با ما -->
+<section id="contact" class="section">
+<h1>ارتباط با ما</h1>
+<p>برای رزرو تبلیغات و هماهنگی ثبت لینک، لطفاً از طریق لینک زیر پیام دهید:</p>
+<p style="margin-top:10px"><a class="admin-btn" href="https://rubika.ir/moslam_2024" target="_blank">پیام به ادمین — Moslam_2024@</a></p>
+</section>
+
+<footer>
+ساخته‌شده توسط مسلم — لینکدونی یخی — © <span id="year"></span>
+</footer>
 </div>
 
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
+
 const buttons = document.querySelectorAll('.nav-btn');
 const sections = document.querySelectorAll('.section');
-buttons.forEach(b=>{
-  b.addEventListener('click', ()=>{
-    const target = b.getAttribute('data-target');
-    sections.forEach(s=>s.classList.remove('active'));
-    document.getElementById(target).classList.add('active');
-    buttons.forEach(btn=>btn.classList.remove('active'));
-    b.classList.add('active');
-  });
+
+buttons.forEach(b => {
+b.addEventListener('click', () => {
+  const target = b.getAttribute('data-target');
+  buttons.forEach(btn => btn.classList.remove('active'));
+  b.classList.add('active');
+  sections.forEach(s => s.classList.remove('active'));
+  document.getElementById(target).classList.add('active');
+});
 });
 </script>
 </body>

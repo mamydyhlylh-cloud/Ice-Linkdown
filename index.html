@@ -3,11 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>لینکدونی یخی – ثبت رایگان و پولی لینک</title>
+<title>لینکدونی یخی – ثبت رایگان و پولی کانال و گروه</title>
 <link rel="icon" href="https://github.com/mamydyhlylh-cloud/Ice-Linkdown/blob/main/favicon.png" type="image/png">
 
-<meta name="description" content="لینکدونی یخی — ثبت رایگان و پولی لینک کانال و گروه روبیکا. تبلیغات هدفمند، جذب ممبر واقعی و نمایش در ۷ کانال پر بازدید."/>
-<meta name="keywords" content="لینکدونی یخی, ثبت رایگان لینک, ثبت پولی لینک, کانال روبیکا, گروه چت, ممبر واقعی, تبلیغات هدفمند, تبادل لینک"/>
+<meta name="description" content="لینکدونی یخی — مرکز ثبت لینک کانال و گروه‌های روبیکا. ثبت رایگان و پولی، جذب ممبر واقعی، و تبلیغات هدفمند.">
+<meta name="keywords" content="لینکدونی یخی, ثبت رایگان لینک, ثبت پولی لینک, کانال روبیکا, گروه چت, گپ, ممبر واقعی, تبلیغات هدفمند">
+
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://mamydyhlylh-cloud.github.io/Ice-Linkdown/">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "لینکدونی یخی",
+  "url": "https://mamydyhlylh-cloud.github.io/Ice-Linkdown/",
+  "description": "لینکدونی یخی — مرکز ثبت لینک کانال و گروه‌های روبیکا. ثبت رایگان و پولی، جذب ممبر واقعی، و تبلیغات هدفمند."
+}
+</script>
 
 <style>
 :root{
@@ -17,42 +30,40 @@
   --accent:#9fe8ff;
   --btn-border: rgba(159,232,255,0.18);
   --muted:#9fdbe8;
-  --glass-strong: rgba(255,255,255,0.04);
 }
-*{box-sizing:border-box}
-html,body{height:100%;margin:0;padding:0;direction:rtl;font-family: Vazir, Tahoma, sans-serif;background:linear-gradient(180deg,#00121a 0%,#021a2a 85%);color:#eaf6ff}
-a{color:inherit;text-decoration:none}
-.wrap{max-width:1100px;margin:28px auto;padding:18px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border-radius:14px}
-header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.brand{display:flex;gap:12px;align-items:center}
-.logo{width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,#dffcff,#9fe8ff);display:flex;align-items:center;justify-content:center;color:#022;font-weight:900;font-size:18px}
-.title{font-weight:900}
-.subtitle{font-size:13px;color:#bfe8f8}
-nav{display:flex;gap:10px;flex-wrap:wrap}
-.nav-btn{
-  display:inline-block;padding:10px 16px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  border:1px solid var(--btn-border); color:var(--accent); font-weight:800; cursor:pointer;
-  backdrop-filter: blur(6px); transition:transform .12s ease, box-shadow .12s ease;
-}
-.nav-btn:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,0.55)}
+*{box-sizing:border-box;}
+html,body{height:100%;margin:0;padding:0;direction:rtl;font-family:Vazir,Tahoma,sans-serif;background:linear-gradient(180deg,#00121a,#021a2a);color:#eaf6ff;}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:1100px;margin:28px auto;padding:18px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border-radius:14px;}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.brand{display:flex;gap:12px;align-items:center;}
+.logo{width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,#dffcff,#9fe8ff);display:flex;align-items:center;justify-content:center;color:#022;font-weight:900;font-size:18px;}
+.title{font-weight:900;}
+.subtitle{font-size:13px;color:#bfe8f8;}
+nav{display:flex;gap:10px;flex-wrap:wrap;}
+.nav-btn{display:inline-block;padding:10px 16px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid var(--btn-border);color:var(--accent);font-weight:800;cursor:pointer;backdrop-filter: blur(6px);transition:transform .12s ease, box-shadow .12s ease;}
+.nav-btn:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,0.55);}
 .nav-btn.active{box-shadow: inset 0 -2px 18px rgba(159,232,255,0.04);}
-.sections{margin-top:20px}
-.section{display:none;padding:20px;border-radius:12px;background:var(--panel);box-shadow:0 10px 36px rgba(0,0,0,0.6)}
-.section.active{display:block}
-h1{margin:0 0 8px 0}
-p.lead{margin:0;color:#cfeff7}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:14px}
-.card{padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);min-height:110px}
-.cta{display:inline-block;padding:10px 14px;border-radius:12px;background:transparent;border:1px solid var(--btn-border);color:var(--accent);font-weight:800}
-.channel-btn{display:inline-block;padding:6px 10px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid var(--btn-border);color:var(--accent);font-weight:800;margin:4px;font-size:12px}
-.admin-btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,#8ef0ff,#bff7ff);color:#022;font-weight:900}
-.muted{color:#bfeffb}
-footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
-.hero-banner{width:100%;height:200px;border-radius:10px;overflow:hidden;display:flex;align-items:center;justify-content:center;position:relative;background:url('https://images.unsplash.com/photo-1600488991470-c8ae8f4cf495?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NzQ0OTV8MHwxfHNlYXJjaHwxfHxib3JlfGVufDB8fHx8MTY5Mjc1MzkxNQ&ixlib=rb-4.0.3&q=80&w=1080') center/cover no-repeat}
-.hero-content{position:relative;z-index:2;text-align:center;background:rgba(0,0,0,0.35);padding:12px;border-radius:8px}
-.hero-title{font-size:24px;font-weight:900;margin-bottom:6px}
-.hero-sub{color:#dff7ff;font-size:14px}
-@media(max-width:720px){.hero-banner{height:140px}.hero-title{font-size:18px}}
+.sections{margin-top:20px;}
+.section{display:none;padding:20px;border-radius:12px;background:var(--panel);box-shadow:0 10px 36px rgba(0,0,0,0.6);}
+.section.active{display:block;}
+h1{margin:0 0 8px 0;}
+p.lead{margin:0;color:#cfeff7;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:14px;}
+.card{padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);min-height:110px;}
+.cta{display:inline-block;padding:10px 14px;border-radius:12px;background:transparent;border:1px solid var(--btn-border);color:var(--accent);font-weight:800;text-decoration:none;}
+.channel-btn{display:inline-block;padding:6px 10px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid var(--btn-border);color:var(--accent);text-decoration:none;font-weight:800;margin:4px;font-size:13px;}
+.channel-btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,0.5);}
+.admin-btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,#8ef0ff,#bff7ff);color:#022;font-weight:900;}
+.muted{color:#bfeffb;}
+footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px;}
+.hero-banner{width:100%;height:220px;border-radius:10px;overflow:hidden;display:flex;align-items:center;justify-content:center;position:relative;}
+.hero-content{position:relative;z-index:2;text-align:center;}
+.hero-title{font-size:28px;font-weight:900;margin-bottom:6px;}
+.hero-sub{color:#dff7ff;font-size:14px;}
+.banner-overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,8,16,0.2), rgba(0,8,16,0.5));z-index:1;}
+.svg-ice{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;opacity:0.95;z-index:0;}
+@media(max-width:720px){.hero-banner{height:180px}.hero-title{font-size:20px;}}
 </style>
 </head>
 <body>
@@ -62,10 +73,10 @@ footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
 <div class="logo">یخ</div>
 <div>
 <div class="title">لینکدونی یخی</div>
-<div class="subtitle">ثبت لینک کانال و گروه — رایگان و ویژه</div>
+<div class="subtitle">مرکز ثبت لینک کانال و گروه</div>
 </div>
 </div>
-<nav role="tablist" aria-label="ناوبری سایت">
+<nav role="tablist">
 <button class="nav-btn active" data-target="home" role="tab" aria-selected="true">خانه</button>
 <button class="nav-btn" data-target="free" role="tab">ثبت رایگان</button>
 <button class="nav-btn" data-target="paid" role="tab">ثبت پولی</button>
@@ -77,19 +88,24 @@ footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
 <!-- HOME -->
 <section id="home" class="section active" role="region" aria-labelledby="homeTitle">
 <div class="hero-banner">
+<img class="svg-ice" src="https://images.unsplash.com/photo-1603570410130-2df2b657c1a3?fit=crop&w=1200&h=400" alt="منظره برفی">
+<div class="banner-overlay"></div>
 <div class="hero-content">
-<div class="hero-title">مرکز ثبت لینک یخی ❄️☃️</div>
-<div class="hero-sub">لینک خود را ثبت کنید و در روبیکا دیده شوید! جذاب، شیک و سریع — همین حالا شروع کنید!</div>
+<div class="hero-title">مرکز ثبت لینک یخی</div>
+<div class="hero-sub">کانال و گروه خود را در لینکدونی یخی ثبت کنید و دیده شوید</div>
 </div>
 </div>
 </section>
 
-<!-- ثبت رایگان -->
+<!-- FREE -->
 <section id="free" class="section" role="region" aria-labelledby="freeTitle">
 <h1 id="freeTitle">🧊 ثبت رایگان</h1>
-<p class="muted">لینک شما پس از تایید ادمین‌های مجموعی یخی در ۷ لینکدونی روبیکا ثبت می‌شود.</p>
+<p class="muted">لینک شما پس از تأیید ادمین‌های مجموعی یخی در ۷ کانال روبیکا ثبت می‌شود.</p>
+<div style="margin-top:10px">
+<a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLSfU8A72A0baAkptPqDSGTnic0bu4UFXMDtriY1irqnwxIIIag/viewform?usp=dialog" target="_blank">رفتن به فرم ثبت رایگان</a>
+</div>
 <div style="margin-top:12px">
-<!-- ۷ کانال دکمه ای -->
+<h3>کانال‌های ثبت لینک</h3>
 <a class="channel-btn" href="https://rubika.ir/ii_O_C_ii" target="_blank">@ii_O_C_ii</a>
 <a class="channel-btn" href="https://rubika.ir/CDHCOGGEOQLXXONPXOIXPXXOZXSXOTXO" target="_blank">@CDHCOGGEOQLXXONPXOIXPXXOZXSXOTXO</a>
 <a class="channel-btn" href="https://rubika.ir/CDHCOGGEOQLXXONPXOIXPXXOOZHWOKO" target="_blank">@CDHCOGGEOQLXXONPXOIXPXXOOZHWOKO</a>
@@ -98,69 +114,53 @@ footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
 <a class="channel-btn" href="https://rubika.ir/linkdoniiirubikaa" target="_blank">@linkdoniiirubikaa</a>
 <a class="channel-btn" href="https://rubika.ir/CDHCCGGE0QLFZPNPLOIIPPSDZCSQNGS" target="_blank">@CDHCCGGE0QLFZPNPLOIIPPSDZCSQNGS</a>
 </div>
-<p class="muted" style="margin-top:10px">برای حمایت از ما، داخل ۷ کانال عضو شوید ♥️</p>
-<p style="margin-top:10px"><a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLSfU8A72A0baAkptPqDSGTnic0bu4UFXMDtriY1irqnwxIIIag/viewform?usp=dialog" target="_blank">رفتن به فرم ثبت رایگان</a></p>
+<p class="muted" style="margin-top:8px;font-size:13px;">برای حمایت از ما لطفاً در ۷ کانال عضو شوید ♥️</p>
 </section>
 
-<!-- ثبت پولی -->
+<!-- PAID -->
 <section id="paid" class="section" role="region" aria-labelledby="paidTitle">
-<h1 id="paidTitle">💸 ثبت پولی — پکیج ۱۵ روزه</h1>
+<h1 id="paidTitle">💸 ثبت پولی</h1>
 <div class="card" style="margin-top:12px">
-<p class="muted">لینک شما پس از تایید ادمین‌های مجموعی یخی در ۷ کانال پر بازدید روبیکا ثبت می‌شود.</p>
-<ul class="muted" style="margin-top:10px">
-<li>ثبت پست آخر: 95,000 تومان</li>
-<li>ثبت پست دوم: 80,000 تومان</li>
-<li>ثبت پست سوم: 70,000 تومان</li>
-<li>ثبت پست چهارم: 60,000 تومان</li>
-<li>ثبت تکی کانال و گروه: 40,000 تومان</li>
-</ul>
-<p class="muted">لیستی ویژه: 20,000 تومان</p>
-<p class="muted">سنجاق ۲۴ ساعته: 30,000 تومان</p>
-<p style="margin-top:10px"><a class="cta" href="https://rubika.ir/moslam_2024" target="_blank">برای ثبت با ادمین مجموعی یخی پیام دهید</a></p>
+<p class="muted">لینک شما پس از تأیید ادمین‌های مجموعی یخی در ۷ کانال پر بازدید روبیکا منتشر می‌شود و بیشترین بازدید را دریافت می‌کند.</p>
+<div style="margin-top:10px">
+<a class="cta admin-btn" href="https://rubika.ir/moslam_2024" target="_blank">هماهنگی و ثبت لینک با ادمین</a>
+</div>
 </div>
 </section>
 
-<!-- ارتباط با ما -->
+<!-- CONTACT -->
 <section id="contact" class="section" role="region" aria-labelledby="contactTitle">
 <h1 id="contactTitle">✉️ ارتباط با ما</h1>
 <div class="card" style="margin-top:12px">
-<p class="muted">برای رزرو تبلیغات و هماهنگی، لطفاً از طریق دکمه زیر با ادمین مجموعی یخی پیام دهید.</p>
-<p style="margin-top:12px"><a class="admin-btn" href="https://rubika.ir/moslam_2024" target="_blank">پیام به ادمین — Moslam_2024@</a></p>
+<p class="muted">برای هماهنگی و پرسش‌های مرتبط با ثبت لینک کانال یا گروه، لطفاً از طریق لینک زیر پیام دهید:</p>
+<div style="margin-top:10px">
+<a class="admin-btn" href="https://rubika.ir/moslam_2024" target="_blank">پیام به ادمین — Moslam_2024@</a>
+</div>
 </div>
 </section>
 </div>
 
-<footer>ساخته‌شده توسط مسلم — لینکدونی یخی — © <span id="year"></span></footer>
+<footer>
+ساخته شده توسط مسلم — لینکدونی یخی — © <span id="year"></span>
+</footer>
+</div>
 
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
-
 (function(){
-  const buttons = Array.from(document.querySelectorAll('.nav-btn'));
-  const sections = Array.from(document.querySelectorAll('.section'));
-
-  function activate(id){
-    buttons.forEach(b=>{
-      const is = b.getAttribute('data-target') === id;
-      b.classList.toggle('active', is);
-      b.setAttribute('aria-selected', is ? 'true' : 'false');
-    });
-    sections.forEach(s=>{
-      s.classList.toggle('active', s.id === id);
-    });
-    const el = document.getElementById(id);
-    if(el) el.scrollIntoView({behavior:'smooth'});
-  }
-
-  buttons.forEach(b=>{
-    b.addEventListener('click', ()=> activate(b.getAttribute('data-target')));
-  });
-
-  Array.from(document.querySelectorAll('a[data-target]')).forEach(a=>{
-    a.addEventListener('click', function(e){ e.preventDefault(); activate(this.getAttribute('data-target')); });
-  });
-
-  activate('home');
+const buttons = Array.from(document.querySelectorAll('.nav-btn'));
+const sections = Array.from(document.querySelectorAll('.section'));
+function activate(id){
+buttons.forEach(b=>{const is=b.getAttribute('data-target')===id;b.classList.toggle('active',is);b.setAttribute('aria-selected',is?'true':'false');});
+sections.forEach(s=>s.classList.toggle('active',s.id===id));
+const el=document.getElementById(id);
+if(el) el.scrollIntoView({behavior:'smooth'});
+}
+buttons.forEach(b=>{b.addEventListener('click',()=>activate(b.getAttribute('data-target')));});
+Array.from(document.querySelectorAll('a[data-target]')).forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();activate(this.getAttribute('data-target'));});});
+activate('home');
+let idx=0;function setIdx(i){idx=(i+buttons.length)%buttons.length;buttons[idx].focus();}
+document.addEventListener('keydown',(e)=>{if(['ArrowLeft','ArrowRight'].includes(e.key)){e.preventDefault();if(e.key==='ArrowLeft') setIdx(idx-1);else setIdx(idx+1);}if(e.key==='Home') setIdx(0);if(e.key==='End') setIdx(buttons.length-1);});
 })();
 </script>
 </body>
